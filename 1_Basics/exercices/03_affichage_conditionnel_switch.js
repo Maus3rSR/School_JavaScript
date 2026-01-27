@@ -1,0 +1,1 @@
+// Affichage conditionnel avec switch
