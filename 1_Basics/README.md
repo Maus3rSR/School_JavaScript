@@ -156,46 +156,98 @@ Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans l
   - `for ... in` sur ton objet
   - `for ... of` sur `Object.entries`
 
-### Exercice 14 : L'heure est venu pour moi d'être un grand marchand de potion !
+### Exercice 14 : Recherche dans l'inventaire
 
 **Fichier** : `exercices/14_grand_marchand.js`
 
-🚀 **Exercice avancé** : Pour ceux qui veulent aller plus loin !
+🎯 **Objectif** : Utiliser des boucles et conditions pour rechercher des informations dans un tableau d'objets.
 
-> Cette fois, c'est du sérieux. On va créer un petit programme qui va vider les bourses 💰 de l'Aventurier et me rendre riche 🤑 ! Fini les soupes aux champignons tous les soirs !
+**Consignes** :
 
-**Alors Archibald 🧙‍♂️, voici le programme qui va te rendre riche 👍 :**
+- Trouve et affiche la potion **la plus chère** de l'inventaire
+- Trouve et affiche la potion avec **le plus de stock**
+- Compte et affiche **combien de potions ont un stock supérieur à 0**
 
-Pré-requis :
+💡 **Astuce** : Utilise des variables pour stocker les résultats pendant que tu parcours l'inventaire avec une boucle `for`.
 
-- La bourse de l'aventurier avec 100 🪙
-- Ta bourse avec 0 🪙
-- Avoir ton inventaire de potions avec :
-  - Potion de soin x1 au prix de 40 🪙
-  - Potion d'endurance x1 au prix de 20 🪙
-  - Potion de mana x2 au prix de 20 🪙
-- Avoir un inventaire pour l'aventurier qui ne contient rien pour le moment
+---
 
-Le programme doit faire les choses suivantes :
+### Exercice 15 : Filtrage et sélection
 
-- Les actions possibles de l'Aventurier
-  1. Acheter une potion
-     - Lors de ce choix, demande-lui quelle potion acheter, et en quelle quantité
-       - 🚀 Tu peux voir pour n'afficher que les potions qui ont encore un stock > 0
-       - 🚀 Tu peux voir pour ordonner la liste des potions du stock le plus grand au plus petit
-     - Avec ces informations:
-       - Si la quantité demandée est supérieure au stock, prévient l'Aventurier que ce n'est pas possible
-       - Sinon
-         - déduit sa bourse du total et ajoute cela à la tienne
-         - déduit le stock de la potion achetée
-         - ajoute la/les potion(s) achetée(s) dans l'inventaire de l'Aventurier
-  2. Vendre une potion
-     - Il peut essayer de vendre une des potions qu'il a dans l'inventaire (au même prix)
-       - Pour cela, tu dois lui faire deviner un chiffre entre 1 et 5 (voir `Math.random`) 🎲
-     - S'il a juste, tu lui rachete tout le stock de la potion en question (avec les mêmes règles de gestion que l'achat)
-     - S'il a faux, tu peux lui dire de re-tenter sa chance 😈
-  3. Quitter
-     - Il ne peut pas hehe 😈
-- Ce que l'aventurier ne sait pas, c'est que tu lui as jeté un sort qui l'oblige à répêter une de ces actions tant que sa bourse n'est pas vide avec `do ... while` 🪄
-- Affiche ton gain, fini les soupes de 🍄 !
-- 🚀 Si tu veux éviter la répétition de code tu peux utiliser des fonctions
+**Fichier** : `exercices/15_filtrage_selection.js`
+
+🎯 **Objectif** : Créer de nouveaux tableaux en filtrant des données selon des critères.
+
+**Consignes** :
+
+- Créé un nouveau tableau `potions_en_stock` contenant **uniquement les potions avec stock > 0**
+- Créé un tableau `potions_abordables` avec les potions qui coûtent **moins de 40 🪙**
+- Affiche le nombre de potions dans chaque nouveau tableau
+- Affiche les tableaux créés dans la console
+
+💡 **Astuce** : Utilise une boucle `for` et la méthode `push()` pour ajouter les potions qui correspondent aux critères.
+
+---
+
+### Exercice 16 : Calculs et statistiques
+
+**Fichier** : `exercices/16_calculs_statistiques.js`
+
+🎯 **Objectif** : Effectuer des calculs sur l'ensemble de l'inventaire.
+
+**Consignes** :
+
+- Calcule la **valeur totale de l'inventaire** (somme de `prix × stock` pour chaque potion)
+- Calcule le **prix moyen** des potions
+- Calcule le **stock total** de toutes les potions
+- Affiche tous ces résultats dans la console avec des messages clairs
+
+💡 **Astuce** : Utilise des variables accumulateurs (qui s'incrémentent dans la boucle).
+
+---
+
+### Exercice 17 : Tri simple
+
+**Fichier** : `exercices/17_tri_simple.js`
+
+🎯 **Objectif** : Trier un tableau d'objets par ordre croissant de prix.
+
+**Consignes** :
+
+- Trie les potions par **prix croissant** (du moins cher au plus cher)
+- Affiche l'inventaire trié dans la console
+- Affiche un message pour chaque potion : `"<nom> : <prix> 🪙"`
+
+💡 **Astuce** : Utilise deux boucles `for` imbriquées pour comparer et échanger les éléments (algorithme de tri à bulles simplifié). Pour échanger deux éléments d'un tableau :
+
+```js
+let temp = inventaire[i];
+inventaire[i] = inventaire[j];
+inventaire[j] = temp;
+```
+
+---
+
+### Exercice 18 : Mini-simulation d'achat
+
+**Fichier** : `exercices/18_simulation_achat.js`
+
+🎯 **Objectif** : Créer une simulation interactive d'achat avec `prompt`.
+
+**Consignes** :
+
+- Affiche l'inventaire disponible à l'aventurier
+- Demande avec `prompt` quelle potion il veut acheter (le nom)
+- Demande avec `prompt` combien il en veut
+- Vérifie si :
+  - La potion existe dans l'inventaire
+  - Il y a assez de stock
+  - L'aventurier a assez d'argent (bourse = 100 🪙)
+- Si tout est OK :
+  - Calcule le prix total
+  - Déduis le montant de la bourse
+  - Déduis le stock
+  - Affiche un message de succès avec la bourse restante
+- Sinon, affiche un message d'erreur approprié
+
+💡 **Astuce** : Utilise une boucle `for` pour chercher la potion par son nom dans l'inventaire.
