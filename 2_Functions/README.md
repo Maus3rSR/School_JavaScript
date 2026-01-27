@@ -1,8 +1,24 @@
 # Exercices sur les fonctions en JavaScript
 
-- Tu peux mettre toutes tes réponses dans le fichier `exercices.js`.
-- À chaque exercice _(chaque sous-titre après le titre Exercices dans cet énoncé)_, tu dois faire un commit avec le titre de l'exercice.
-- Tu n'es pas obligé de garder le code fait précédemment, mais ⚠️ **attention** certaines choses sont utiles pour plus tard.
+## 🎮 Workflow de travail
+
+### Étapes pour chaque exercice
+
+1. **Ouvre `index.html`** dans ton navigateur
+2. **Dans `index.html`**, décommente **UNIQUEMENT** l'exercice sur lequel tu travailles (lignes 11-19)
+3. **Ouvre la console** du navigateur avec `F12`
+4. **Édite le fichier JavaScript** correspondant dans `exercices/`
+5. **Rafraîchis la page** (`Ctrl+R` ou `Cmd+R`) pour voir tes modifications
+6. **Teste et vérifie** que ton code fonctionne correctement
+7. **Fais un commit** avec le titre de l'exercice
+8. **Passe au suivant** : commente l'exercice actuel, décommente le prochain
+
+### ⚠️ Règles importantes
+
+- **Un seul script actif à la fois** pour éviter les conflits de variables
+- **Consulte le README** pour les consignes détaillées de chaque exercice
+- **Les constantes pré-remplies** sont des exemples, tu peux les modifier
+- **N'oublie pas** : certaines variables et fonctions seront utiles pour les exercices suivants
 
 ## Rappels
 
@@ -59,68 +75,84 @@ const inventaire = [
 ];
 ```
 
-## Exercices
+---
 
-### Salutation Aventurier
+## 📚 Liste des exercices
+
+### Exercice 1 : Salutation Aventurier
+
+**Fichier** : `exercices/01_salutation_aventurier.js`
 
 - Crée une fonction `salutations` qui prend en paramètre ton nom de sorcier
-- Cette fonction affiche dans la `console` : `Salutations Aventurier ! Je me nomme <nom_sorcier> pour vous servir.`.
+- Cette fonction affiche dans la `console` : `Salutations Aventurier ! Je me nomme <nom_sorcier> pour vous servir.`
 - ⚠️ Passe bien ton nom de sorcier en paramètre, n'utilise pas la constante de manière globale
 
-### Quel est le tarif d'une potion ?
+### Exercice 2 : Quel est le tarif d'une potion ?
+
+**Fichier** : `exercices/02_tarif_potion.js`
 
 - Crée une fonction prenant en paramètre l'identifiant d'une potion et l'inventaire et une quantité demandée par défaut à 1
 - Pas besoin de prendre le stock en compte pour cette fonction
 - La fonction doit retourner `prix potion * quantité`
 - Affiche dans la `console` un exemple de prix pour 3 potions coûtant 10 🪙 en exécutant cette fonction
 
-### Fabrication de potion
+### Exercice 3 : Fabrication de potion
 
-- Crée une fonction avec en paramètres
+**Fichier** : `exercices/03_fabrication_potion.js`
+
+- Crée une fonction avec en paramètres :
   - identifiant de la potion
   - prix (pas obligatoire, par défaut à 10)
   - stock (pas obligatoire, par défaut à 1)
 - La fonction doit te retourner un nouvel objet de la même structure que la potion existante dans l'`inventaire`
 - Affiche dans la `console` la création de nouvelles potions, parfois change les paramètres de prix et de stock pour avoir des valeurs différentes
 
-### Ajout de nouvelles potions dans l'inventaire
+### Exercice 4 : Ajout de nouvelles potions dans l'inventaire
 
-- Crée une fonction pour ajouter une potion à l'inventaire
+**Fichier** : `exercices/04_ajout_inventaire.js`
+
+- Crée une fonction pour ajouter une potion à l'inventaire :
   - premier paramètre est l'inventaire des potions
   - deuxième paramètre est une potion
-- Dans cette fonction
-  - Si la potion existe déjà
+- Dans cette fonction :
+  - Si la potion existe déjà :
     - Met à jour le prix, et ajoute le stock au stock existant
-    - Sinon, ajoute la potion dans son inventaire
+  - Sinon, ajoute la potion dans son inventaire
   - À chaque ajout de potion on fait un tri sur l'inventaire du plus cher au moins cher avec la méthode `sort` disponible sur les tableaux _(cela va modifier le tableau original)_
 
-### Cherche moi les potions qui...
+### Exercice 5 : Cherche moi les potions qui...
 
-- Écris une fonction qui permet de récupérer la liste de toutes les potions en stock. ⚠️ Utilise la méthode `filter` disponible sur les tableaux pour éviter de muter le tableau initial.
-- Écris une fonction qui permet de récupérer la liste de toutes les potions avec un stock à 0.
-- Exécute et affiche ton `inventaire`, le résultat de la première fonction et le résultat de la deuxième fonction dans la `console` et observe bien que chaque tableau est différent et que le tableau initial est bien intact.
+**Fichier** : `exercices/05_filtrage_potions.js`
 
-### Allons faire de la cueillette, nous avons besoin de plus de potions !
+- Écris une fonction qui permet de récupérer la liste de toutes les potions en stock. ⚠️ Utilise la méthode `filter` disponible sur les tableaux pour éviter de muter le tableau initial
+- Écris une fonction qui permet de récupérer la liste de toutes les potions avec un stock à 0
+- Exécute et affiche ton `inventaire`, le résultat de la première fonction et le résultat de la deuxième fonction dans la `console` et observe bien que chaque tableau est différent et que le tableau initial est bien intact
+
+### Exercice 6 : Allons faire de la cueillette, nous avons besoin de plus de potions !
+
+**Fichier** : `exercices/06_cueillette_ingredients.js`
 
 Tu vas transformer la fonction de fabrication de potions pour prendre en compte des ingrédients.
 
 - Ajoute en 2ème paramètre un tableau d'ingrédients _(liste de chaînes de caractères)_
-- La fonction doit retourner la nouvelle potion si la liste d'ingrédients est complète. Sinon, elle retournera une erreur `new Error('Il manque des ingrédients à cette potion')`. Utilise le `manuel_de_fabrication` pour vérifier cela.
-- ⚠️ Ici nous ne passons pas la constante `manuel_de_fabrication` en paramètre. Nous utilisons cette constante de manière **globale** directement dans la fonction. Ce n'est pas une pratique conseillée mais dans le cas de notre exercice cela sera plus simple.
+- La fonction doit retourner la nouvelle potion si la liste d'ingrédients est complète. Sinon, elle retournera une erreur `new Error('Il manque des ingrédients à cette potion')`. Utilise le `manuel_de_fabrication` pour vérifier cela
+- ⚠️ Ici nous ne passons pas la constante `manuel_de_fabrication` en paramètre. Nous utilisons cette constante de manière **globale** directement dans la fonction. Ce n'est pas une pratique conseillée mais dans le cas de notre exercice cela sera plus simple
 
----
+**Tests** :
 
-- Teste la création de plusieurs potions, parfois avec tous les ingrédients, parfois avec des ingrédients manquants.
-  - **⚠️ Attention** il faut utiliser la fonction d'ajout de potion uniquement si la fabrication a fonctionné.
-  - Pour cela, fais un test si la création de fonction retourne une erreur
-    - Si `<resultat_creation_potion> instanceof Error`, affiche `console.error(<resultat_creation_potion>.message)`
-    - Sinon, utilise la fonction d'ajout de potion dans l'inventaire
+- Teste la création de plusieurs potions, parfois avec tous les ingrédients, parfois avec des ingrédients manquants
+- **⚠️ Attention** il faut utiliser la fonction d'ajout de potion uniquement si la fabrication a fonctionné
+- Pour cela, fais un test si la création de fonction retourne une erreur :
+  - Si `<resultat_creation_potion> instanceof Error`, affiche `console.error(<resultat_creation_potion>.message)`
+  - Sinon, utilise la fonction d'ajout de potion dans l'inventaire
 
-### Une potion n'est jamais fabriquée en retard, ni en avance d'ailleurs. Elle est fabriquée précisément à l'heure prévue !
+### Exercice 7 : Une potion n'est jamais fabriquée en retard, ni en avance d'ailleurs. Elle est fabriquée précisément à l'heure prévue !
+
+**Fichier** : `exercices/07_delai_fabrication.js`
 
 Si tu regardes le manuel de fabrication tu peux voir que les potions ont un délai de fabrication.
 
-- Transforme la fonction de fabrication pour ajouter ce délai avec `setTimeout`. Je t'aide un peu:
+- Transforme la fonction de fabrication pour ajouter ce délai avec `setTimeout`. Je t'aide un peu :
 
 ```js
 // Tu dois utiliser cette fonction
@@ -135,7 +167,7 @@ setTimeout(<fonction_de_rappel>, <temps_de_fabrication> * 1000) // x1000 pour co
   - Lors de l'appel de ce paramètre, passe en argument la nouvelle potion.
   - **⚠️ La fonction ne retourne plus la potion créée. Cela doit se faire uniquement quand le délai du `setTimeout` est terminé !**
 
-Je t'aide un peu pour te montrer ce que cela **pourrait** donner à l'utilisation :
+**Exemple d'utilisation** :
 
 ```js
 function laPotionEstFinie(potion) {
@@ -147,11 +179,20 @@ function laPotionEstFinie(potion) {
 // 3ème argument la fameuse fonction de rappel :)
 // 4ème argument le prix
 // 5ème argument le stock
-const erreurDeFabrication = fabriqueUnePotion("potion_de_sommeil", ["coeur_de_cristal", "seve_arbre_des_reves", "fleurs_de_lune"], laPotionEstFinie, 200, 10);
-if (erreurDeFabrication instanceof Error) console.error(erreurDeFabrication.message);
+const erreurDeFabrication = fabriqueUnePotion(
+  "potion_de_sommeil",
+  ["coeur_de_cristal", "seve_arbre_des_reves", "fleurs_de_lune"],
+  laPotionEstFinie,
+  200,
+  10,
+);
+if (erreurDeFabrication instanceof Error)
+  console.error(erreurDeFabrication.message);
 ```
 
-### Epreuve ultime, la fabrication de plusieurs inventaires indépendants
+### Exercice 8 : Epreuve ultime, la fabrication de plusieurs inventaires indépendants
+
+**Fichier** : `exercices/08_closures_inventaires.js`
 
 Dans ce dernier exercice tu vas utiliser des `closures` pour permettre de créer plusieurs inventaires qui vont fonctionner de manière indépendante.
 Un exemple de closure pour un système de compteur que vous pouvez essayer et tester (supprimez le code ensuite) :
@@ -216,8 +257,12 @@ const inventaireBoutiquePotionsA = creationInventaire();
 const inventaireBoutiquePotionsB = creationInventaire();
 ```
 
-### Bonus, un sorcier a toujours la classe !
+---
 
-- Transforme la fonction de l'exercice précédent en une `class` avec des propriétés et des méthodes.
-  - Cet exercice te fera découvrir une autre syntaxe qui rappelle la programmation orientée objet comme en Python, Java, PhP, C++, C#, etc.
-  - Le comportement sera exactement le même que dans l'exercice précédent. Uniquement la syntaxe changera :)
+### Exercice 9 : Bonus, un sorcier a toujours la classe !
+
+**Fichier** : `exercices/09_bonus_class.js`
+
+- Transforme la fonction de l'exercice précédent en une `class` avec des propriétés et des méthodes
+- Cet exercice te fera découvrir une autre syntaxe qui rappelle la programmation orientée objet comme en Python, Java, PhP, C++, C#, etc.
+- Le comportement sera exactement le même que dans l'exercice précédent. Uniquement la syntaxe changera :)

@@ -7,3 +7,8 @@ trigger: always_on
 - Langage is JavaScript
 - All instructions is in French language
 - Each folder from the root is a new category of exercices to learn Javascript
+
+# Behaviors
+
+- Strong pedagogical knowledge
+- Progressive learning curve of difficulty
