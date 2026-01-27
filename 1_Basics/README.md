@@ -1,8 +1,24 @@
 # Exercices sur les bases de JavaScript
 
-- Vous pouvez mettre toutes vos réponses dans le fichier `exercices.js`.
-- A chaque exercice, tu dois faire un commit avec le titre de l'exercice.
-- Tu n'es pas obligé de garder le code fait précédemment, mais ⚠️ **attention** certaines choses sont utiles pour plus tard.
+## 🎮 Workflow de travail
+
+### Étapes pour chaque exercice
+
+1. **Ouvre `index.html`** dans ton navigateur
+2. **Dans `index.html`**, décommente **UNIQUEMENT** l'exercice sur lequel tu travailles (lignes 11-24)
+3. **Ouvre la console** du navigateur avec `F12`
+4. **Édite le fichier JavaScript** correspondant dans `exercices/`
+5. **Rafraîchis la page** (`Ctrl+R` ou `Cmd+R`) pour voir tes modifications
+6. **Teste et vérifie** que ton code fonctionne correctement
+7. **Fais un commit** avec le titre de l'exercice
+8. **Passe au suivant** : commente l'exercice actuel, décommente le prochain
+
+### ⚠️ Règles importantes
+
+- **Un seul script actif à la fois** pour éviter les conflits de variables
+- **Consulte le README** pour les consignes détaillées de chaque exercice
+- **Les variables pré-remplies** sont des exemples, tu peux les modifier
+- **N'oublie pas** : certaines variables seront utiles pour les exercices suivants
 
 ## Thème 🔮🧙‍♂️🧪🪙🍄
 
@@ -20,9 +36,13 @@ console.log("Le sorcier se nomme :" + nom_sorcier + " ! 🎉");
 Dès que tu verras `<ce_genre_de_chose>` c'est qu'il faudra remplacer `<ce_genre_de_chose>` par la bonne variable approprié au contexte.\
 Tu comprendras en lisant la suite :)
 
-## Exercices
+---
 
-### Définition de variables
+## 📚 Liste des exercices
+
+### Exercice 1 : Définition de variables
+
+**Fichier** : `exercices/01_definition_variables.js`
 
 Déclare les variables pour ta boutique de potions :
 
@@ -31,11 +51,17 @@ Déclare les variables pour ta boutique de potions :
 - Déclare une variable pour indiquer le prix d'une potion de soin, la valeur par défaut de ton choix.
 - Déclare une variable pour indiquer si la boutique est ouverte ou non.
 
-### Affichage conditionnel
+Affiche dans la console les informations de ta boutique avec `console.log`.
+
+### Exercice 2 : Affichage conditionnel
+
+**Fichier** : `exercices/02_affichage_conditionnel.js`
 
 Affiche dans ta `console` => `Bienvenue dans la boutique <nom_boutique> Aventurier ! 🎉` si la boutique est ouverte, sinon affiche `La boutique <nom_boutique> est fermée, revenez plus tard Aventurier ! 😴`
 
-### Affichage conditionnel avec switch
+### Exercice 3 : Affichage conditionnel avec switch
+
+**Fichier** : `exercices/03_affichage_conditionnel_switch.js`
 
 - Affiche dans la console `Bienvenue dans mon humble boutique Aventurier. Que veux-tu savoir ? 🤔`
   - `1. Le nom de la boutique`
@@ -47,11 +73,15 @@ Affiche dans ta `console` => `Bienvenue dans la boutique <nom_boutique> Aventuri
   - Dans le cas où cela ne correspond pas à aucun des choix, affiche `Mh... Désolé aventurier, je ne comprends pas ce que tu souhaites. Refais ton choix ! 😕`
   - ⚠️ **Attention**, `prompt` retourne une chaîne de caractère, il faudra certainement le convertir en `Number` avec `parseInt`
 
-### Calcul du prix total d'une commande de potion 🪙
+### Exercice 4 : Calcul du prix total d'une commande de potion 🪙
+
+**Fichier** : `exercices/04_calcul_prix_total.js`
 
 Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans la `console` => `Prix de <quantite_potion> potions de soins : <prix_total> 🪙 mon cher Aventurier. 💸`.
 
-### Bourse de l'Aventurier 💰
+### Exercice 5 : Bourse de l'Aventurier 💰
+
+**Fichier** : `exercices/05_bourse_aventurier.js`
 
 - Créé une variable pour stocker l'argent de l'aventurier, initialise-la avec une valeur de ton choix.
 - Vérifie si l'aventurier a assez d'argent pour acheter la quantité de potion demandée.
@@ -59,28 +89,38 @@ Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans l
   - ⚠️ **Attention**, il faut que l'aventurier ai assez d'argent pour pouvoir acheter les potions !
   - ⚠️ **Attention**, il faut qu'il y ait assez de potion en stock pour pouvoir acheter les potions !
 
-### Liste des potions
+### Exercice 6 : Liste des potions
+
+**Fichier** : `exercices/06_liste_potions.js`
 
 - Créé un tableau qui contient les noms de trois potions que tu vends dans ta boutique.
 - Affiche le tableau directement dans la console.
 
-### Affichage des potions
+### Exercice 7 : Affichage des potions
+
+**Fichier** : `exercices/07_affichage_potions.js`
 
 - Affiche le nom de la première potion.
 - Affiche le nom de la dernière potion **sans utiliser l'indice directement, mais en utilisant la taille du tableau** (en utilisant la propriété length de l'objet Array).
 - Affiche le nom de chaque potions avec une boucle `for` et affiche le message `Nous avons de la <nom_potion> !`
 
-### Ajout d'une nouvelle potion
+### Exercice 8 : Ajout d'une nouvelle potion
+
+**Fichier** : `exercices/08_ajout_nouvelle_potion.js`
 
 - Ajoute une nouvelle potion dans le tableau en utilisant la méthode `push` de l'objet Array.
 - Affiche la liste des potions mis à jour
 
-### Finaly, nope.
+### Exercice 9 : Finaly, nope.
+
+**Fichier** : `exercices/09_finaly_nope.js`
 
 - Finalement, nous ne gardons pas cette nouvelle potion dans la liste. Supprime la en utilisant la méthode `pop`
 - Affiche la liste des potions mis à jour
 
-### Rangeons les informations de la potion de soin dans un objet 🧹
+### Exercice 10 : Rangeons les informations de la potion de soin dans un objet 🧹
+
+**Fichier** : `exercices/10_objet_potion_soin.js`
 
 - Créé un objet pour stocker les informations d'une potion de soin, tu auras dans cet objet :
   - le nom de la potion
@@ -88,17 +128,23 @@ Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans l
   - le stock
 - Affiche directement l'objet dans la console
 
-### Affichons les informations de la potion
+### Exercice 11 : Affichons les informations de la potion
+
+**Fichier** : `exercices/11_affichage_infos_potion.js`
 
 - Affiche le nom de la potion en utilisant la notation pointée `.`
 - Affiche le prix de la potion en utilisant la notation crochet `[]`
 
-### C'est l'heure de faire l'inventaire...
+### Exercice 12 : C'est l'heure de faire l'inventaire...
+
+**Fichier** : `exercices/12_inventaire.js`
 
 - Transforme ton tableau de de noms de potions, en tableau d'objets de potions.
 - Tu peux nommer ta constante `inventaire`
 
-### Aventurier, regarde tout ce que je vends !
+### Exercice 13 : Aventurier, regarde tout ce que je vends !
+
+**Fichier** : `exercices/13_affichage_inventaire.js`
 
 - Affiche ton inventaire à l'aventurier avec une boucle `for`
 - Pour chaque itération, affiche :
@@ -110,13 +156,15 @@ Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans l
   - `for ... in` sur ton objet
   - `for ... of` sur `Object.entries`
 
-### L'heure est venu pour moi d'être un grand marchand de potion !
+### Exercice 14 : L'heure est venu pour moi d'être un grand marchand de potion !
 
-Si tu vois 🚀 c'est pour les personnes qui veulent aller un peu plus loin :) mais pas obligatoire
+**Fichier** : `exercices/14_grand_marchand.js`
+
+🚀 **Exercice avancé** : Pour ceux qui veulent aller plus loin !
 
 > Cette fois, c'est du sérieux. On va créer un petit programme qui va vider les bourses 💰 de l'Aventurier et me rendre riche 🤑 ! Fini les soupes aux champignons tous les soirs !
 
-## Alors Archibald 🧙‍♂️, voici le programme qui va te rendre riche 👍 :
+**Alors Archibald 🧙‍♂️, voici le programme qui va te rendre riche 👍 :**
 
 Pré-requis :
 
