@@ -80,3 +80,14 @@ const potions = [
 // Récupère le formulaire et gère l'événement 'submit'
 // Utilise FormData pour extraire les valeurs
 // Réutilise la fonction de l'exercice 6 pour ajouter la nouvelle potion
+
+// ============================================
+// EXERCICE 8 : Le Miroir Magique 🪞
+// ============================================
+// 🎯 Objectif : Utiliser classList pour ajouter/retirer des classes CSS
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Sélectionne le miroir et les éléments à afficher/cacher
+// Utilise mouseenter et mouseleave pour détecter le survol
+// Utilise classList.remove() et classList.add() pour afficher le reflet

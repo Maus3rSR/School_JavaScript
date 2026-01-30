@@ -365,17 +365,115 @@ Page : Quand tu remplis le formulaire et cliques sur "Ajouter", une nouvelle car
 
 ---
 
-## 🎉 Félicitations !
+### Exercice 8 : Le Miroir Magique 🪞
+
+**Fichier** : `exercices.js` (section EXERCICE 8)
+
+� **Objectif** : Apprendre à utiliser **classList** pour manipuler les classes CSS dynamiquement.
+
+**Contexte** : Un miroir magique révèle le véritable reflet de celui qui le regarde... et ce n'est pas toujours flatteur ! Au survol, le miroir montre le reflet d'un baron hideux.
+
+**Consignes** :
+
+1. Sélectionne le miroir `#magic-mirror` avec `querySelector()`
+2. Sélectionne le texte du miroir `.mirror-text`
+3. Sélectionne le reflet `.mirror-reflection`
+4. Ajoute un événement `mouseenter` (quand la souris entre sur le miroir) :
+   - Cache le texte : ajoute la classe `hidden` au texte avec `classList.add('hidden')`
+   - Affiche le reflet : retire la classe `hidden` du reflet avec `classList.remove('hidden')`
+5. Ajoute un événement `mouseleave` (quand la souris sort du miroir) :
+   - Affiche le texte : retire la classe `hidden` du texte
+   - Cache le reflet : ajoute la classe `hidden` au reflet
+
+💡 **Ce que tu vas apprendre** :
+
+- `classList.add()` : ajoute une classe CSS à un élément
+- `classList.remove()` : retire une classe CSS d'un élément
+- `classList.toggle()` : ajoute si absente, retire si présente (bonus !)
+- `mouseenter` et `mouseleave` : événements de survol
+- Manipulation de classes CSS (meilleure pratique que `style` direct)
+
+💡 **Astuce** :
+
+```js
+const miroir = document.querySelector("#magic-mirror");
+const texte = document.querySelector(".mirror-text");
+const reflet = document.querySelector(".mirror-reflection");
+
+miroir.addEventListener("mouseenter", () => {
+  texte.classList.add("hidden");
+  reflet.classList.remove("hidden");
+});
+```
+
+💡 **Résultat attendu** :
+
+```
+Page : Au survol du miroir, le texte disparaît et le baron hideux apparaît
+```
+
+---
+
+## �🎉 Félicitations !
 
 Tu as terminé les exercices sur le DOM ! Tu sais maintenant :
 
 - ✅ Sélectionner des éléments (`querySelector`, `querySelectorAll`)
 - ✅ Créer et ajouter des éléments (`createElement`, `appendChild`)
 - ✅ Supprimer des éléments (`remove`)
-- ✅ Gérer les événements (`addEventListener`)
+- ✅ Gérer les événements (`addEventListener`, `click`, `submit`, `mouseenter`, `mouseleave`)
 - ✅ Modifier les styles (`style.backgroundColor`)
+- ✅ Manipuler les classes CSS (`classList`)
 - ✅ Utiliser les templates HTML
 - ✅ Gérer les formulaires (`FormData`, `submit`)
 - ✅ Réutiliser du code avec des fonctions
 
 Tu es prêt(e) à créer des pages web interactives ! 🚀
+
+---
+
+## 📚 Exercices bonus suggérés (à venir)
+
+### Exercice 9 : L'Arbre Généalogique des Potions 🌳
+
+**Concepts** : Navigation dans le DOM (`parentElement`, `children`, `nextElementSibling`)
+
+- Parcourir la structure HTML
+- Trouver des éléments relatifs à partir d'un point de départ
+- Modifier des éléments en fonction de leur position
+
+### Exercice 10 : Les Étiquettes Magiques 🏷️
+
+**Concepts** : Attributs et data attributes
+
+- Ajouter des informations cachées sur les potions (rareté, effets secondaires)
+- Utiliser `data-*` attributes pour stocker des données
+- `getAttribute()`, `setAttribute()`, `dataset`
+- Afficher des infos au clic sur une potion
+
+### Exercice 11 : Validation Magique en Temps Réel ✨
+
+**Concepts** : Validation de formulaire avancée
+
+- Événements `input`, `blur`, `focus`
+- Validation pendant la saisie
+- Messages d'erreur dynamiques
+- Classes CSS pour les états (valide/invalide)
+
+### Exercice 12 : Calculateur de Commande 🧮
+
+**Concepts** : Formulaire avec calcul dynamique
+
+- Sélection de quantités pour chaque potion
+- Calcul automatique du total
+- Événement `change` sur les inputs
+- Mise à jour en temps réel
+
+### Exercice 13 : Recherche de Potions 🔍
+
+**Concepts** : Filtrage en temps réel
+
+- Barre de recherche
+- Filtrage des cartes de potions
+- Événement `input` pour recherche instantanée
+- Afficher/cacher des éléments selon le filtre
