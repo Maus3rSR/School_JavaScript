@@ -1,0 +1,337 @@
+/* ============================================
+   BOUTIQUE D'ARCHIBALD - THÈME FANTASTIQUE MODERNE
+   ============================================ */
+
+:root {
+  --fantasy-purple: #8b5cf6;
+  --fantasy-purple-dark: #6d28d9;
+  --fantasy-blue: #3b82f6;
+  --fantasy-gold: #fbbf24;
+  --fantasy-emerald: #10b981;
+  --fantasy-red: #ef4444;
+  --dark-bg: #0f172a;
+  --dark-card: #1e293b;
+  --light-text: #f1f5f9;
+  --border-glow: rgba(139, 92, 246, 0.3);
+}
+
+/* ============================================
+   BODY - Fond fantastique subtil
+   ============================================ */
+
+body {
+  background: linear-gradient(to bottom, #0f172a 0%, #1e293b 100%);
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Effet de particules magiques subtiles */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 10% 20%, rgba(139, 92, 246, 0.3), transparent),
+    radial-gradient(1px 1px at 90% 80%, rgba(59, 130, 246, 0.3), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(251, 191, 36, 0.2), transparent),
+    radial-gradient(1px 1px at 80% 30%, rgba(139, 92, 246, 0.2), transparent);
+  background-size: 100% 100%;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================
+   CONTAINER - Carte principale
+   ============================================ */
+
+.container {
+  position: relative;
+  z-index: 1;
+  background: rgba(30, 41, 59, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+/* ============================================
+   TITRES
+   ============================================ */
+
+h1 {
+  color: var(--fantasy-gold) !important;
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+h2 {
+  color: var(--fantasy-purple) !important;
+  font-weight: 600;
+  border-bottom: 2px solid var(--fantasy-purple);
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--fantasy-gold);
+}
+
+#blague_de_roger_le_sorcier {
+  color: var(--fantasy-red);
+  opacity: 0.7;
+}
+
+/* ============================================
+   DESCRIPTION
+   ============================================ */
+
+#description_boutique {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.05));
+  border-left: 3px solid var(--fantasy-purple);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   BOUTONS - Style fantastique moderne
+   ============================================ */
+
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--fantasy-purple), var(--fantasy-blue));
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.5);
+  background: linear-gradient(135deg, var(--fantasy-purple-dark), var(--fantasy-blue));
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc2626, var(--fantasy-red));
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.5);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #059669, var(--fantasy-emerald));
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.5);
+}
+
+#call_archibald {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   BOÎTES MAGIQUES
+   ============================================ */
+
+.boite {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  cursor: pointer;
+}
+
+.boite:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+  border-color: var(--fantasy-purple);
+}
+
+/* ============================================
+   CARTES DE POTIONS
+   ============================================ */
+
+.card {
+  background: linear-gradient(135deg, var(--dark-card) 0%, #334155 100%) !important;
+  border: 1px solid var(--border-glow) !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--fantasy-purple), var(--fantasy-blue), var(--fantasy-gold));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+  border-color: var(--fantasy-purple);
+}
+
+.card-title {
+  color: var(--fantasy-gold) !important;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.card-text {
+  color: var(--light-text) !important;
+  line-height: 1.6;
+}
+
+.prix, .prix_potion {
+  color: var(--fantasy-gold);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* ============================================
+   FORMULAIRE
+   ============================================ */
+
+.form {
+  background: rgba(30, 41, 59, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.form-group label {
+  color: var(--fantasy-purple);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: var(--light-text) !important;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background: rgba(15, 23, 42, 0.9) !important;
+  border-color: var(--fantasy-purple);
+  box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.2);
+  color: var(--light-text) !important;
+}
+
+.form-control::placeholder {
+  color: rgba(241, 245, 249, 0.4);
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+section {
+  margin-bottom: 3rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .boite {
+    margin: 0 auto;
+  }
+}
+
+/* ============================================
+   ANIMATIONS SUBTILES
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card, .boite {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Effet de lueur subtile sur le container */
+@keyframes subtleGlow {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 30px rgba(139, 92, 246, 0.2);
+  }
+}
+
+.container {
+  animation: subtleGlow 4s ease-in-out infinite;
+}
