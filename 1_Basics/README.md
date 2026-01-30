@@ -11,11 +11,13 @@
 5. **Rafraîchis la page** (`Ctrl+R` ou `Cmd+R`) pour voir tes modifications
 6. **Teste et vérifie** que ton code fonctionne correctement
 7. **Fais un commit** avec le titre de l'exercice
-8. **Passe au suivant** : commente l'exercice actuel, décommente le prochain
+8. **Passe au suivant** : commente le script de l'exercice actuel, décommente le script du prochain
+
+💡 **NB** : Si vous avez déjà abordé les notions des méthodes du prototype Array comme `forEach`, `filter`, `map`, `reduce`, etc. Vous pouvez également utiliser ces méthodes pour faire les exercices au lieu des astuces données dans les exercices.
 
 ### ⚠️ Règles importantes
 
-- **Un seul script actif à la fois** pour éviter les conflits de variables
+- **Un seul script actif à la fois**
 - **Consulte le README** pour les consignes détaillées de chaque exercice
 - **Les variables pré-remplies** sont des exemples, tu peux les modifier
 - **N'oublie pas** : certaines variables seront utiles pour les exercices suivants
@@ -110,11 +112,6 @@ Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans l
 
 - Ajoute une nouvelle potion dans le tableau en utilisant la méthode `push` de l'objet Array.
 - Affiche la liste des potions mis à jour
-
-### Exercice 9 : Finaly, nope.
-
-**Fichier** : `exercices/09_finaly_nope.js`
-
 - Finalement, nous ne gardons pas cette nouvelle potion dans la liste. Supprime la en utilisant la méthode `pop`
 - Affiche la liste des potions mis à jour
 
@@ -135,16 +132,17 @@ Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans l
 - Affiche le nom de la potion en utilisant la notation pointée `.`
 - Affiche le prix de la potion en utilisant la notation crochet `[]`
 
-### Exercice 12 : C'est l'heure de faire l'inventaire...
-
-**Fichier** : `exercices/12_inventaire.js`
-
-- Transforme ton tableau de de noms de potions, en tableau d'objets de potions.
-- Tu peux nommer ta constante `inventaire`
-
 ### Exercice 13 : Aventurier, regarde tout ce que je vends !
 
 **Fichier** : `exercices/13_affichage_inventaire.js`
+
+Créer un inventaire avec 3 objets `potions` :
+
+- Potion de soin
+- Potion de mana
+- Potion d'endurance
+
+Ensuite :
 
 - Affiche ton inventaire à l'aventurier avec une boucle `for`
 - Pour chaque itération, affiche :
@@ -200,9 +198,7 @@ Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans l
 - Calcule la **valeur totale de l'inventaire** (somme de `prix × stock` pour chaque potion)
 - Calcule le **prix moyen** des potions
 - Calcule le **stock total** de toutes les potions
-- Affiche tous ces résultats dans la console avec des messages clairs
-
-💡 **Astuce** : Utilise des variables accumulateurs (qui s'incrémentent dans la boucle).
+- Affiche tous ces résultats dans la console
 
 ---
 
@@ -237,7 +233,7 @@ inventaire[j] = temp;
 **Consignes** :
 
 - Affiche l'inventaire disponible à l'aventurier
-- Demande avec `prompt` quelle potion il veut acheter (le nom)
+- Demande avec `prompt` quelle potion il veut acheter (utilise un numéro de choix qui servira d'identifiant)
 - Demande avec `prompt` combien il en veut
 - Vérifie si :
   - La potion existe dans l'inventaire
@@ -249,5 +245,3 @@ inventaire[j] = temp;
   - Déduis le stock
   - Affiche un message de succès avec la bourse restante
 - Sinon, affiche un message d'erreur approprié
-
-💡 **Astuce** : Utilise une boucle `for` pour chercher la potion par son nom dans l'inventaire.
