@@ -132,9 +132,9 @@ Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans l
 - Affiche le nom de la potion en utilisant la notation pointée `.`
 - Affiche le prix de la potion en utilisant la notation crochet `[]`
 
-### Exercice 13 : Aventurier, regarde tout ce que je vends !
+### Exercice 12 : Aventurier, regarde tout ce que je vends !
 
-**Fichier** : `exercices/13_affichage_inventaire.js`
+**Fichier** : `exercices/12_affichage_inventaire.js`
 
 Créer un inventaire avec 3 objets `potions` :
 
@@ -154,9 +154,9 @@ Ensuite :
   - `for ... in` sur ton objet
   - `for ... of` sur `Object.entries`
 
-### Exercice 14 : Recherche dans l'inventaire
+### Exercice 13 : Recherche dans l'inventaire
 
-**Fichier** : `exercices/14_grand_marchand.js`
+**Fichier** : `exercices/13_grand_marchand.js`
 
 🎯 **Objectif** : Utiliser des boucles et conditions pour rechercher des informations dans un tableau d'objets.
 
@@ -170,9 +170,9 @@ Ensuite :
 
 ---
 
-### Exercice 15 : Filtrage et sélection
+### Exercice 14 : Filtrage et sélection
 
-**Fichier** : `exercices/15_filtrage_selection.js`
+**Fichier** : `exercices/14_filtrage_selection.js`
 
 🎯 **Objectif** : Créer de nouveaux tableaux en filtrant des données selon des critères.
 
@@ -187,9 +187,9 @@ Ensuite :
 
 ---
 
-### Exercice 16 : Calculs et statistiques
+### Exercice 15 : Calculs et statistiques
 
-**Fichier** : `exercices/16_calculs_statistiques.js`
+**Fichier** : `exercices/15_calculs_statistiques.js`
 
 🎯 **Objectif** : Effectuer des calculs sur l'ensemble de l'inventaire.
 
@@ -202,9 +202,9 @@ Ensuite :
 
 ---
 
-### Exercice 17 : Tri simple
+### Exercice 16 : Tri simple
 
-**Fichier** : `exercices/17_tri_simple.js`
+**Fichier** : `exercices/16_tri_simple.js`
 
 🎯 **Objectif** : Trier un tableau d'objets par ordre croissant de prix.
 
@@ -224,9 +224,9 @@ inventaire[j] = temp;
 
 ---
 
-### Exercice 18 : Mini-simulation d'achat
+### Exercice 17 : Mini-simulation d'achat
 
-**Fichier** : `exercices/18_simulation_achat.js`
+**Fichier** : `exercices/17_simulation_achat.js`
 
 🎯 **Objectif** : Créer une simulation interactive d'achat avec `prompt`.
 
