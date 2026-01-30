@@ -6,12 +6,11 @@
 
 1. **Ouvre `index.html`** dans ton navigateur
 2. **Dans `index.html`**, décommente **UNIQUEMENT** l'exercice sur lequel tu travailles (lignes 11-24)
-3. **Ouvre la console** du navigateur avec `F12`
+3. **Ouvre la console** du navigateur avec `F12` ou avec `liveserver` ou avec le `debugger` NodeJS
 4. **Édite le fichier JavaScript** correspondant dans `exercices/`
-5. **Rafraîchis la page** (`Ctrl+R` ou `Cmd+R`) pour voir tes modifications
-6. **Teste et vérifie** que ton code fonctionne correctement
-7. **Fais un commit** avec le titre de l'exercice
-8. **Passe au suivant** : commente le script de l'exercice actuel, décommente le script du prochain
+5. **Teste et vérifie** que ton code fonctionne correctement
+6. **Fais un commit** avec le titre de l'exercice
+7. **Passe au suivant** : commente le script de l'exercice actuel, décommente le script du prochain
 
 💡 **NB** : Si vous avez déjà abordé les notions des méthodes du prototype Array comme `forEach`, `filter`, `map`, `reduce`, etc. Vous pouvez également utiliser ces méthodes pour faire les exercices au lieu des astuces données dans les exercices.
 

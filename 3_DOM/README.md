@@ -1,132 +1,381 @@
-# Exercices sur les fonctions en JavaScript
+# Exercices sur le DOM en JavaScript
 
-- Écris toutes tes réponses dans le fichier `exercices.js`.
-- Pour chaque exercice _(chaque sous-titre après le titre Exercices dans cet énoncé)_, fais un commit avec le titre de l'exercice.
+## 🎮 Workflow de travail
 
-## Rappels
+### Étapes pour chaque exercice
 
-- N'hésite pas à consulter tes notes de cours et la documentation en ligne.
-- Utilise `console.log` ou le `debugger` de ton navigateur pour déboguer ton code.
+1. **Ouvre `index.html`** dans ton navigateur
+2. **Ouvre la console** du navigateur avec `F12` ou avec `liveserver`
+3. **Édite le fichier `exercices.js`** (tous les exercices sont dans ce fichier)
+4. **Trouve la section de l'exercice** grâce aux commentaires visuels (ex: `// EXERCICE 1`)
+5. **Écris ton code** dans la zone `// ✍️ TON CODE ICI`
+6. **Observe les résultats** directement dans la page ET dans la console
+7. **Teste et vérifie** que ton code fonctionne correctement
+8. **Fais un commit** avec le titre de l'exercice
+9. **Passe au suivant** : les exercices se complètent, garde ton code !
+
+### ⚠️ Règles importantes
+
+- **Tous les exercices sont dans le même fichier** `exercices.js`
+- **Consulte le README** pour les consignes détaillées de chaque exercice
+- **Les exercices sont progressifs** : certains dépendent des précédents
+- **Garde ton code** : ne commente pas les exercices précédents (sauf si demandé)
+- **Résultats visuels** : la plupart des exercices modifient directement la page HTML
+- **Utilise la console** : `console.log()` est ton ami pour déboguer !
+
+## 📖 Rappels sur le DOM
+
+### Qu'est-ce que le DOM ?
+
+Le **DOM** (Document Object Model) est une représentation en arbre de ta page HTML. JavaScript peut **lire** et **modifier** cette structure pour rendre ta page interactive !
+
+### Concepts clés
+
+**1. Sélectionner des éléments**
+
+```js
+// Sélectionner UN élément
+const titre = document.querySelector("h1"); // Par balise
+const bouton = document.querySelector("#mon-id"); // Par ID
+const carte = document.querySelector(".ma-classe"); // Par classe
+
+// Sélectionner PLUSIEURS éléments
+const tousLesBoutons = document.querySelectorAll("button"); // Retourne une NodeList
+```
+
+**2. Lire et modifier le contenu**
+
+```js
+const titre = document.querySelector("h1");
+console.log(titre.textContent); // Lire le texte
+titre.textContent = "Nouveau titre"; // Modifier le texte
+```
+
+**3. Créer et ajouter des éléments**
+
+```js
+const nouveauParagraphe = document.createElement("p"); // Créer
+nouveauParagraphe.textContent = "Mon texte"; // Remplir
+document.body.appendChild(nouveauParagraphe); // Ajouter à la page
+```
+
+**4. Supprimer des éléments**
+
+```js
+const element = document.querySelector("#a-supprimer");
+element.remove(); // Supprimer l'élément du DOM
+```
+
+**5. Gérer les événements**
+
+```js
+const bouton = document.querySelector("#mon-bouton");
+bouton.addEventListener("click", function () {
+  console.log("Bouton cliqué !");
+});
+```
+
+**6. Modifier les styles**
+
+```js
+const boite = document.querySelector(".boite");
+boite.style.backgroundColor = "red"; // Modifier le style CSS
+```
+
+💡 **Astuce** : Utilise toujours la console du navigateur (`F12`) pour inspecter les éléments et voir la structure du DOM !
 
 ## Thème 🔮🧙‍♂️🧪🪙🍄
 
-- Tu incarnes le sorcier Archibald 🧙‍♂️ qui gère une petite boutique de potions magiques 🧪.
+Tu incarnes le sorcier **Archibald** 🧙‍♂️ qui gère une petite boutique de potions magiques 🧪. Tu vas rendre ta boutique interactive en manipulant le DOM !
 
-## Exercices
+---
 
-### Quel est le titre de la boutique
+## 📚 Liste des exercices
 
-**Objectif**: Apprendre à sélectionner un noeud HTML unique dans le DOM avec querySelector et à récupérer son contenu textuel.
+### Exercice 1 : Quel est le titre de la boutique ?
 
-**Instructions**:
+**Fichier** : `exercices.js` (section EXERCICE 1)
 
-- Utilise la méthode `querySelector` sur `document` pour récupérer le noeud HTML du titre `<h1>` et stocke-le dans une constante.
-- Récupère le texte contenu dans ce noeud avec la propriété `textContent` et affiche sa valeur dans la `console`.
+🎯 **Objectif** : Apprendre à **sélectionner** un élément HTML et **lire** son contenu.
 
-**Résultat attendu**: Le texte "Boutique d'Archibald le Sorcier de pacotille 🧙‍♂️" s'affiche dans la console du navigateur.
+**Consignes** :
 
-### Des informations manquent !
+1. Utilise `document.querySelector('h1')` pour sélectionner le titre principal de la page
+2. Stocke cet élément dans une constante (ex: `titre`)
+3. Affiche le contenu textuel avec `console.log(titre.textContent)`
 
-**Objectif**: Apprendre à créer et ajouter des noeuds HTML dans le DOM de manière dynamique.
+💡 **Ce que tu vas apprendre** :
 
-**Instructions**:
+- `querySelector()` : sélectionne le **premier** élément qui correspond au sélecteur
+- `textContent` : récupère tout le texte contenu dans un élément (sans les balises HTML)
 
-- Tu dois ajouter un paragraphe qui contiendra une instruction d'aide à l'achat dans la description de ta boutique.
-  - Utilise la méthode `querySelector` sur `document` pour récupérer le noeud HTML parent `<div id="description_boutique">` qui contient déjà un paragraphe de bienvenue, et stocke-le dans une constante.
-  - Crée un nouveau noeud HTML de type paragraphe avec la méthode `createElement('p')` de `document`.
-  - Ajoute le texte suivant `Pour cela, il vous suffit de cliquer sur une des potions de la liste ci-dessous pour l'acheter.` en l'affectant à la propriété `textContent` du nouveau paragraphe.
-  - Ajoute ce nouveau paragraphe comme enfant du noeud parent avec la méthode `appendChild`.
+💡 **Résultat attendu** :
 
-**Résultat attendu**: Un nouveau paragraphe apparaît sous le message de bienvenue avec les instructions d'achat.
-
-### Roger, enfoiré !
-
-**Objectif**: Apprendre à supprimer des noeuds HTML du DOM.
-
-**Instructions**:
-Roger, un collègue sorcier jaloux, a saboté le titre de ta boutique en ajoutant le mot "pacotille".
-
-- Utilise `querySelector` sur `document` pour récupérer le noeud HTML `<span id="blague_de_roger_le_sorcier">` qui contient le texte indésirable.
-- Supprime ce noeud du DOM avec la méthode `remove()`.
-
-**Résultat attendu**: Le texte "de pacotille" disparaît du titre de la boutique, ne laissant que "Boutique d'Archibald le Sorcier 🧙‍♂️".
-
-### Archibald n'est pas là, appelons le !
-
-**Objectif**: Apprendre à gérer les événements de clic et à afficher des alertes dans le navigateur.
-
-**Instructions**:
-
-- Utilise `querySelector` sur `document` pour récupérer le noeud HTML du bouton `<button id="call_archibald">`.
-- Attache un écouteur d'événement de type `click` à ce bouton avec la méthode `addEventListener`.
-- Dans la fonction de rappel de l'événement (callback), utilise `alert` pour afficher le message `🧙‍♂️ J'arrive, j'arrive Aventurier !`.
-
-**Résultat attendu**: Une boîte de dialogue apparaît avec le message quand on clique sur le bouton "Appeler Archibald".
-
-### Faisons un peu de magie 🪄
-
-**Objectif**: Apprendre à sélectionner plusieurs noeuds HTML et à modifier leurs styles dynamiquement.
-
-**Instructions**:
-
-Pour divertir l'Aventurier pendant ton arrivée, il peut jouer avec des boutons magiques qui changent la couleur des boîtes.
-
-- Utilise `querySelectorAll` pour récupérer tous les noeuds HTML des boîtes (classe 'boite') à l'intérieur de la `<div id="boites_magique">`.
-- Récupère chaque bouton de couleur avec `querySelector` (`#btn_change_red`, `#btn_change_blue`, `#btn_change_green`).
-- Pour chaque bouton, attache un écouteur d'événement qui modifiera la propriété `style.backgroundColor` des boîtes appropriées.
-
-**Résultat attendu**:
-
-- Le bouton rouge change la couleur de fond de la première boîte en 'red'
-- Le bouton bleu change la couleur de fond des deux premières boîtes en 'blue'
-- Le bouton vert change la couleur de fond de toutes les boîtes en 'green'
-
-### Aventurier, voici ma boutique !
-
-**Objectif**: Apprendre à utiliser les templates HTML pour insérer des éléments plus complexes dans le DOM.
-
-**Note**: Un exemple visuel d'une carte de potion est présent dans le HTML sous `<section id="liste_potions" class="row">`. Cet exemple est à ignorer, le vrai template à utiliser se trouve dans la balise `<template>` à la fin du document.
-
-Récupérez cette liste de potions :
-
-```js
-const potions = [
-  {
-    nom: "Potion de soin",
-    description: "Cette potion rouge vif a une odeur de fraise des bois. Un seul gorgée et vos blessures se referment comme par magie ! Effets secondaires possibles: cheveux roses pendant 24h.",
-    prix: 10,
-  },
-  {
-    nom: "Potion de sommeil",
-    description: "Un liquide bleu nuit qui sent la lavande et les rêves. Une goutte et vous dormirez comme un bébé dragon ! Attention: ne pas utiliser si vous devez combattre un troll dans les prochaines 8 heures.",
-    prix: 50,
-  },
-];
+```
+Console : "Boutique d'Archibald le Sorcier de pacotille 🧙‍♂️"
 ```
 
-- Pour chaque potion :
-  - Utilise `querySelector` pour récupérer le contenant du noeud HTML de la liste des potions `<div id="liste_potions">`.
-  - Les éléments à créer sont plus conséquents avec `createElement`. Nous allons donc plutôt utiliser les `template`. Vous trouverez celui d'une carte de potion dans l'HTML `<template id="template_potion">`
-    - Utilise `querySelector` pour récupérer le template avec son id.
-    - Clone le contenu dans une constante avec `.content.cloneNode(true);`.
-  - À partir d'ici, remplace certains éléments HTML du template avec `querySelector` et `textContent`.
-    - `<h5 class="nom_potion">` contient le nom de la potion.
-    - `<span class="prix_potion"></span>` contient le prix de la potion.
-    - `<p class="card-text description_potion">` contient la description de la potion.
+---
 
-**Résultat attendu**: Les deux cartes des potions sont affichées sous le titre "Les potions de la boutique".
+### Exercice 2 : Des informations manquent !
 
-### Plus de potions, nous avons besoin de plus de potions !
+**Fichier** : `exercices.js` (section EXERCICE 2)
 
-**Objectif**: Apprendre à manipuler les formulaires et à réutiliser du code existant pour ajouter dynamiquement du contenu à la page.
+🎯 **Objectif** : Apprendre à **créer** et **ajouter** un nouvel élément HTML dans le DOM.
 
-Un formulaire a été ajouté pour te permettre d'ajouter plus de potions à la boutique et se faire plus de sous !
+**Consignes** :
 
-- Utilise `querySelector` pour récupérer le formulaire `<form>` et affecte-le à une constante.
-- Gère la soumission du formulaire en y attachant un évènement `submit`.
-- Utilise l'objet `FormData` pour extraire les valeurs du formulaire.
-  - `FormData` se crée avec le mot-clef `new` et tu peux y passer directement un `FormHtmlElement` (le formulaire que tu as affecté à ta constante). Par exemple : `const formData = new FormData(formHtmlElement)`.
-  - Utilise la méthode `get` pour récupérer la valeur d'un champ de formulaire.
-- Trouve un moyen pour réutiliser le code de l'exercice précédent avec une ou plusieurs fonctions, qui te permettra de rajouter cette nouvelle potion dans la boutique.
+1. Sélectionne le conteneur `<div id="description_boutique">` avec `querySelector()`
+2. Crée un nouveau paragraphe avec `document.createElement('p')`
+3. Ajoute le texte suivant au paragraphe :
+   ```
+   Pour cela, il vous suffit de cliquer sur une des potions de la liste ci-dessous pour l'acheter.
+   ```
+4. Ajoute ce paragraphe au conteneur avec la méthode `appendChild()`
 
-**Résultat attendu**: Quand le formulaire est soumis avec des valeurs valides, une nouvelle potion apparaît dans la boutique avec les informations saisies.
+💡 **Ce que tu vas apprendre** :
+
+- `createElement()` : crée un nouvel élément HTML (mais ne l'ajoute pas encore à la page)
+- `appendChild()` : ajoute un élément enfant à la fin d'un élément parent
+
+💡 **Résultat attendu** :
+
+```
+Page : Un nouveau paragraphe apparaît sous le message de bienvenue
+```
+
+---
+
+### Exercice 3 : Roger, enfoiré !
+
+**Fichier** : `exercices.js` (section EXERCICE 3)
+
+🎯 **Objectif** : Apprendre à **supprimer** un élément du DOM.
+
+**Contexte** : Roger, un collègue sorcier jaloux, a saboté le titre de ta boutique en ajoutant le mot "de pacotille". Il faut réparer ça !
+
+**Consignes** :
+
+1. Sélectionne l'élément `<span id="blague_de_roger_le_sorcier">` avec `querySelector()`
+2. Supprime-le du DOM avec la méthode `.remove()`
+
+💡 **Ce que tu vas apprendre** :
+
+- `remove()` : supprime définitivement un élément du DOM
+- Sélection par ID : `#nom_de_id` est plus rapide et précis
+
+💡 **Résultat attendu** :
+
+```
+Page : Le titre devient "Boutique d'Archibald le Sorcier 🧙‍♂️" (sans "de pacotille")
+```
+
+---
+
+### Exercice 4 : Archibald n'est pas là, appelons-le !
+
+**Fichier** : `exercices.js` (section EXERCICE 4)
+
+🎯 **Objectif** : Apprendre à gérer les **événements** de clic.
+
+**Consignes** :
+
+1. Sélectionne le bouton `<button id="call_archibald">` avec `querySelector()`
+2. Ajoute un écouteur d'événement avec `addEventListener('click', callback)`
+3. Dans la fonction callback, utilise `alert()` pour afficher : `🧙‍♂️ J'arrive, j'arrive Aventurier !`
+
+💡 **Ce que tu vas apprendre** :
+
+- `addEventListener()` : permet d'écouter des événements (click, submit, keypress, etc.)
+- **Callback** : une fonction qui s'exécute quand l'événement se produit
+- `alert()` : affiche une boîte de dialogue (attention, elle bloque la page !)
+
+💡 **Exemple de structure** :
+
+```js
+const bouton = document.querySelector("#call_archibald");
+bouton.addEventListener("click", () => {
+  // Ton code ici
+});
+```
+
+💡 **Résultat attendu** :
+
+```
+Page : Quand tu cliques sur "Appeler Archibald", une alerte apparaît
+```
+
+### Exercice 5 : Faisons un peu de magie 🪄
+
+**Fichier** : `exercices.js` (section EXERCICE 5)
+
+🎯 **Objectif** : Apprendre à sélectionner **plusieurs éléments** et modifier leurs **styles CSS**.
+
+**Contexte** : Pour divertir l'Aventurier pendant ton arrivée, il peut jouer avec des boutons magiques qui changent la couleur des boîtes.
+
+**Consignes** :
+
+1. Utilise `querySelectorAll('.boite')` pour récupérer **toutes** les boîtes (retourne une NodeList)
+2. Sélectionne les 3 boutons de couleur :
+   - `#btn_change_red`
+   - `#btn_change_blue`
+   - `#btn_change_green`
+3. Pour chaque bouton, ajoute un événement `click` qui :
+   - **Bouton rouge** : change la couleur de la **1ère boîte** en `'red'`
+   - **Bouton bleu** : change la couleur des **2 premières boîtes** en `'blue'`
+   - **Bouton vert** : change la couleur de **toutes les boîtes** en `'green'`
+
+💡 **Ce que tu vas apprendre** :
+
+- `querySelectorAll()` : retourne une **NodeList** (comme un tableau) de tous les éléments correspondants
+- Accès par index : `boites[0]` pour la 1ère, `boites[1]` pour la 2ème, etc.
+- `style.backgroundColor` : modifie la couleur de fond CSS
+
+💡 **Astuce** :
+
+```js
+const boites = document.querySelectorAll(".boite");
+boites[0].style.backgroundColor = "red"; // Première boîte
+```
+
+💡 **Résultat attendu** :
+
+```
+Page : Les boutons changent les couleurs des boîtes selon les règles définies
+```
+
+### Exercice 6 : Aventurier, voici ma boutique !
+
+**Fichier** : `exercices.js` (section EXERCICE 6)
+
+🎯 **Objectif** : Apprendre à utiliser les **templates HTML** pour créer des éléments complexes.
+
+**Contexte** : Tu as un tableau de potions (déjà fourni dans `exercices.js`) et tu dois afficher chaque potion sous forme de carte dans la boutique.
+
+⚠️ **Note** : Ignore la carte d'exemple dans le HTML, utilise le `<template id="template_potion">` à la fin du document.
+
+**Consignes** :
+
+1. Sélectionne le conteneur `<section id="liste_potions">`
+2. Sélectionne le template `<template id="template_potion">`
+3. **Pour chaque potion** du tableau `potions` :
+   - Clone le template avec `.content.cloneNode(true)`
+   - Dans le clone, modifie les éléments suivants :
+     - `.nom_potion` → nom de la potion
+     - `.prix_potion` → prix de la potion
+     - `.description_potion` → description de la potion
+   - Ajoute le clone au conteneur avec `appendChild()`
+
+💡 **Ce que tu vas apprendre** :
+
+- **Templates HTML** : permettent de définir une structure réutilisable
+- `cloneNode(true)` : crée une copie complète d'un élément (avec tous ses enfants)
+- Boucle sur un tableau pour créer plusieurs éléments
+
+💡 **Structure recommandée** :
+
+```js
+const conteneur = document.querySelector("#liste_potions");
+const template = document.querySelector("#template_potion");
+
+potions.forEach((potion) => {
+  const clone = template.content.cloneNode(true);
+
+  // Modifier le clone
+  clone.querySelector(".nom_potion").textContent = potion.nom;
+  // ... etc
+
+  conteneur.appendChild(clone);
+});
+```
+
+💡 **Résultat attendu** :
+
+```
+Page : Deux cartes de potions apparaissent avec leurs informations
+```
+
+---
+
+### Exercice 7 : Plus de potions, nous avons besoin de plus de potions !
+
+**Fichier** : `exercices.js` (section EXERCICE 7)
+
+🎯 **Objectif** : Apprendre à gérer les **formulaires** et **réutiliser du code**.
+
+**Contexte** : Un formulaire permet d'ajouter de nouvelles potions à la boutique. Il faut récupérer les données et créer une nouvelle carte.
+
+**Consignes** :
+
+1. Sélectionne le formulaire `<form>` avec `querySelector()`
+2. Ajoute un écouteur d'événement `submit` sur le formulaire
+3. Dans le callback :
+   - **Important** : Empêche le rechargement de la page avec `event.preventDefault()`
+   - Crée un objet `FormData` : `new FormData(formulaire)`
+   - Récupère les valeurs avec `.get('nom')`, `.get('description')`, `.get('prix')`
+   - Crée un objet potion avec ces valeurs
+   - **Réutilise le code de l'exercice 6** pour afficher cette nouvelle potion
+
+💡 **Ce que tu vas apprendre** :
+
+- Événement `submit` : se déclenche quand on soumet un formulaire
+- `event.preventDefault()` : empêche le comportement par défaut (rechargement)
+- `FormData` : facilite la récupération des valeurs de formulaire
+- **Réutilisation de code** : transforme le code de l'exercice 6 en fonction !
+
+💡 **Astuce - Crée une fonction réutilisable** :
+
+```js
+function afficherPotion(potion) {
+  const conteneur = document.querySelector("#liste_potions");
+  const template = document.querySelector("#template_potion");
+  const clone = template.content.cloneNode(true);
+
+  clone.querySelector(".nom_potion").textContent = potion.nom;
+  clone.querySelector(".prix_potion").textContent = potion.prix;
+  clone.querySelector(".description_potion").textContent = potion.description;
+
+  conteneur.appendChild(clone);
+}
+```
+
+💡 **Structure pour le formulaire** :
+
+```js
+const formulaire = document.querySelector("form");
+formulaire.addEventListener("submit", (event) => {
+  event.preventDefault(); // IMPORTANT !
+
+  const formData = new FormData(formulaire);
+  const nouvellePotion = {
+    nom: formData.get("nom"),
+    description: formData.get("description"),
+    prix: formData.get("prix"),
+  };
+
+  afficherPotion(nouvellePotion);
+});
+```
+
+💡 **Résultat attendu** :
+
+```
+Page : Quand tu remplis le formulaire et cliques sur "Ajouter", une nouvelle carte de potion apparaît
+```
+
+---
+
+## 🎉 Félicitations !
+
+Tu as terminé les exercices sur le DOM ! Tu sais maintenant :
+
+- ✅ Sélectionner des éléments (`querySelector`, `querySelectorAll`)
+- ✅ Créer et ajouter des éléments (`createElement`, `appendChild`)
+- ✅ Supprimer des éléments (`remove`)
+- ✅ Gérer les événements (`addEventListener`)
+- ✅ Modifier les styles (`style.backgroundColor`)
+- ✅ Utiliser les templates HTML
+- ✅ Gérer les formulaires (`FormData`, `submit`)
+- ✅ Réutiliser du code avec des fonctions
+
+Tu es prêt(e) à créer des pages web interactives ! 🚀

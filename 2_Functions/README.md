@@ -5,15 +5,14 @@
 ### Étapes pour chaque exercice
 
 1. **Ouvre `index.html`** dans ton navigateur
-2. **Ouvre la console** du navigateur avec `F12`
+2. **Ouvre la console** du navigateur avec `F12` ou avec `liveserver` ou avec le `debugger` NodeJS
 3. **Édite le fichier `exercices.js`** (tous les exercices sont dans ce fichier)
 4. **Trouve la section de l'exercice** grâce aux commentaires visuels (ex: `// EXERCICE 1`)
 5. **Écris ton code** dans la zone `// ✍️ TON CODE ICI`
 6. **Décommente les tests** dans la section `// 🧪 TESTS` de l'exercice
-7. **Rafraîchis la page** (`Ctrl+R` ou `Cmd+R`) pour voir tes résultats dans la console
-8. **Teste et vérifie** que ton code fonctionne correctement
-9. **Fais un commit** avec le titre de l'exercice
-10. **Passe au suivant** : commente les tests de l'exercice actuel, passe à l'exercice suivant
+7. **Teste et vérifie** que ton code fonctionne correctement
+8. **Fais un commit** avec le titre de l'exercice
+9. **Passe au suivant** : commente les tests de l'exercice actuel, passe à l'exercice suivant
 
 ### ⚠️ Règles importantes
 
