@@ -244,3 +244,22 @@ inventaire[j] = temp;
   - Déduis le stock
   - Affiche un message de succès avec la bourse restante
 - Sinon, affiche un message d'erreur approprié
+
+---
+
+## 🎉 Félicitations !
+
+Tu as terminé les exercices sur les bases de JavaScript ! Tu maîtrises maintenant :
+
+- ✅ **Variables** : `let`, `const` et leurs différences
+- ✅ **Types de données** : string, number, boolean, undefined, null
+- ✅ **Opérateurs** : arithmétiques, comparaison, logiques
+- ✅ **Conditions** : `if/else`, opérateurs de comparaison
+- ✅ **Tableaux** : création, accès, modification, méthodes (`push`, `pop`, `length`)
+- ✅ **Boucles** : `for`, `while`, itération sur tableaux
+- ✅ **Objets** : création, propriétés, accès (`.` et `[]`)
+- ✅ **Tableaux d'objets** : structures de données complexes
+- ✅ **Interactions** : `prompt()`, `alert()`, `console.log()`
+- ✅ **Algorithmes simples** : recherche, tri, calculs
+
+Tu as maintenant les fondations solides pour continuer ton apprentissage de JavaScript ! 🚀

@@ -504,3 +504,22 @@ console.log(boutiqueB.getPotionsEnRupture()); // [potion_mana]
 - **Closure** : `const obj = creerInventaire()` → fonction qui retourne un objet
 - **Classe** : `const obj = new Inventaire()` → utilise `new` pour créer une instance
 - Les deux permettent d'avoir des données privées et des méthodes publiques !
+
+---
+
+## 🎉 Félicitations !
+
+Tu as terminé les exercices sur les fonctions en JavaScript ! Tu maîtrises maintenant :
+
+- ✅ **Fonctions** : déclaration, paramètres, valeurs de retour
+- ✅ **Paramètres par défaut** : valeurs par défaut pour les paramètres
+- ✅ **Retour de valeurs** : `return` pour renvoyer des résultats
+- ✅ **Fonctions pures** : fonctions sans effets de bord
+- ✅ **Scope** : portée des variables (locale vs globale)
+- ✅ **Closures** : fonctions qui "capturent" leur environnement
+- ✅ **Données privées** : encapsulation avec closures
+- ✅ **Méthodes** : fonctions dans des objets
+- ✅ **Réutilisation de code** : DRY (Don't Repeat Yourself)
+- ✅ **Classes** (bonus) : programmation orientée objet
+
+Tu sais maintenant organiser ton code de manière modulaire et réutilisable ! 🚀

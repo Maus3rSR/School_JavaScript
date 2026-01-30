@@ -608,3 +608,24 @@ Page : Quand tu changes les quantités, les totaux se mettent à jour automatiqu
 ```
 Page : En tapant dans la recherche, seules les potions correspondantes s'affichent
 ```
+
+---
+
+## 🎉 Félicitations !
+
+Tu as terminé les exercices sur le DOM en JavaScript ! Tu maîtrises maintenant :
+
+- ✅ **Sélection d'éléments** : `querySelector()`, `querySelectorAll()`, `getElementById()`
+- ✅ **Manipulation de contenu** : `textContent`, `innerHTML`
+- ✅ **Création d'éléments** : `createElement()`, `appendChild()`
+- ✅ **Suppression d'éléments** : `remove()`
+- ✅ **Événements** : `addEventListener()`, `click`, `submit`, `mouseenter`, `mouseleave`, `input`, `change`
+- ✅ **Styles CSS** : `style.property`, `classList` (`add`, `remove`, `toggle`)
+- ✅ **Templates HTML** : `<template>`, `cloneNode()`
+- ✅ **Formulaires** : `FormData`, `preventDefault()`, validation en temps réel
+- ✅ **Navigation DOM** : `parentElement`, `children`, `closest()`, siblings
+- ✅ **Data attributes** : `dataset`, `getAttribute()`, `setAttribute()`
+- ✅ **Calculs dynamiques** : mise à jour en temps réel
+- ✅ **Filtrage** : recherche et affichage dynamique
+
+Tu sais maintenant créer des pages web interactives et dynamiques ! 🚀

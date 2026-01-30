@@ -8,7 +8,7 @@ const localisationEpoqueHTML = document.querySelector(".localisation_epoque");
 const listeArtefactHTML = document.querySelector(".liste_artefacts");
 const formChoixEpoqueHtml = document.querySelector(".form__choix_epoque");
 const formRechercheArtefact = document.querySelector(
-  ".form__recherche_artefact"
+  ".form__recherche_artefact",
 );
 
 const creerLesChoixEpoque = (epoques) => {
@@ -78,18 +78,85 @@ main();
 // Permet d'être réutilisé dans la fonction quandRechercheArtefact
 let nomEpoqueActuelle;
 
-// Fonction appelée plus haut quand le formulaire de voyage temporel est envoyé
-// et qu'une époque de destination du voyage temporel a été choisi
-// Faites le test depuis la page HTML
+// ============================================
+// EXERCICE 1 : Le Téléporteur Temporel ⏰
+// ============================================
+// 🎯 Objectif : Comprendre les callbacks et setTimeout()
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Crée la fonction voyagerTemps(destination, callback)
+// Utilise setTimeout() avec generationNombreAleatoireEntre(1000, 3000)
+
+// Fonction appelée quand le formulaire de voyage temporel est envoyé
 function quandEpoqueChoisie(nomEpoque) {
   nomEpoqueActuelle = nomEpoque;
   console.log(nomEpoqueActuelle);
-  // Utilisation de votre fonction voyagerTemps
+
+  // ✍️ TON CODE ICI
+  // Utilise voyagerTemps() ici
+  // Avant le voyage : cache .localisation_epoque et affiche .voyage_en_cours
+  // Après le voyage (callback) : cache le loader et appelle afficherDestination()
 }
 
-// Fonction appelée plus haut quand le formulaire de recherche d'artefact est envoyé
-// Faites le test depuis la page HTML
+// ============================================
+// EXERCICE 2 : La Collecte d'Artefact Mystère 🏺
+// ============================================
+// 🎯 Objectif : Callback avec paramètre (succès/échec)
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Crée la fonction collecterArtefact(nomArtefact, callback)
+// Le callback reçoit true ou false selon le succès
+
+// Fonction appelée quand le formulaire de recherche d'artefact est envoyé
 function quandRechercheArtefact(artefact) {
   console.log(artefact);
-  // Utilisation de votre fonction collecterArtefact
+
+  // ✍️ TON CODE ICI
+  // Utilise collecterArtefact() ici
+  // Avant : affiche .recherche_en_cours
+  // Après (callback) : cache le loader et appelle afficherRechercheArtefact()
 }
+
+// ============================================
+// EXERCICE 3 : La Mission Temporelle Complexe 🔗
+// ============================================
+// 🎯 Objectif : Comprendre le "callback hell"
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Crée la fonction missionTemporelleComplexe()
+// Exécute la séquence : medievale → épée chevalier → romaine → bouclier romain → épée romaine
+
+// ============================================
+// EXERCICE 4 : Je te promets des voyages sans tracas ! 🤝
+// ============================================
+// 🎯 Objectif : Transformer les callbacks en Promesses
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Réécris voyagerTemps() pour retourner une Promesse
+// Réécris collecterArtefact() pour retourner une Promesse (resolve/reject)
+// Réécris missionTemporelleComplexe() avec .then() et .catch()
+
+// ============================================
+// EXERCICE 5 : La Mission Finale Asynchrone ⚡
+// ============================================
+// 🎯 Objectif : Utiliser async/await
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Rends missionTemporelleComplexe() asynchrone avec async
+// Remplace les .then() par await
+// Utilise try/catch pour gérer les erreurs
+
+// ============================================
+// EXERCICE 6 : Chargement Asynchrone des Époques 🌐
+// ============================================
+// 🎯 Objectif : Utiliser fetch() pour charger des données JSON
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Modifie la fonction main() pour charger les époques depuis data/epoques.json
+// Utilise fetch() et await

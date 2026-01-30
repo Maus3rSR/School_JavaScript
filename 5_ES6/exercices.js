@@ -1,7 +1,8 @@
-/**
- * Exercice 1
- * Template literals
- */
+// ============================================
+// EXERCICE 1 : Template Literals 📝
+// ============================================
+// 🎯 Objectif : Remplacer la concaténation par les template literals
+// 📖 Consignes : Consulte le README pour les détails
 
 // Exercice 1.1 : Transforme la concaténation en interpolation de chaîne de caractères avec les backticks `
 function afficheAddresse(address) {
@@ -22,19 +23,20 @@ console.log(
     street: "10 rue de la republique",
     city: "Paris",
     country: "France",
-  })
+  }),
 );
 
 // Exercice 1.2 : Utilise les chaînes multilignes avec les backticks ` pour afficher plus simplement le menu
 console.log("Exercice 1.2");
 console.log(
-  "Menu de la semaine :\n    - Pâte à tartine\n    - Hoagie\n    - Salade de pommes"
+  "Menu de la semaine :\n    - Pâte à tartine\n    - Hoagie\n    - Salade de pommes",
 );
 
-/**
- * Exercice 2
- * Décomposition (Destructuring)
- */
+// ============================================
+// EXERCICE 2 : Destructuring (Décomposition) 📦
+// ============================================
+// 🎯 Objectif : Utiliser la décomposition pour extraire des valeurs
+// 📖 Consignes : Consulte le README pour les détails
 
 const colors = ["Red", "Green", "Blue", "Yellow"];
 
@@ -97,7 +99,7 @@ console.log("Exercice 2.4");
 console.log(
   mainCharacterName,
   secondCharacterName,
-  thirdCharacterJapaneseVoice
+  thirdCharacterJapaneseVoice,
 );
 
 // ------
@@ -130,10 +132,11 @@ function hello(person) {
 console.log("Exercice 2.6");
 hello(person);
 
-/**
- * Exercice 3
- * Opérateur de reste ...
- */
+// ============================================
+// EXERCICE 3 : Rest Operator (...rest) 🎒
+// ============================================
+// 🎯 Objectif : Utiliser l'opérateur rest pour capturer le reste
+// 📖 Consignes : Consulte le README pour les détails
 
 // Exercice 3.1 : Décompose le tableau colors pour ne garder dans le reste que les couleurs bleue et jaune
 const restOfColors = [];
@@ -173,10 +176,11 @@ function min(a, b, c) {
 console.log("Exercice 3.4");
 console.log(min(12, 13, 52, 68, 2, 23, 5)); // Le résultat doit être 2
 
-/**
- * Exercice 4
- * Opérateur de dispersion (spread)
- */
+// ============================================
+// EXERCICE 4 : Spread Operator (...spread) 🌊
+// ============================================
+// 🎯 Objectif : Utiliser l'opérateur spread pour étendre des collections
+// 📖 Consignes : Consulte le README pour les détails
 
 // Exercice 4.1 : Utilise l'opérateur de dispersion pour ajouter "Pink" et "Magenta" dans un nouveau tableau
 const moreColors = colors.concat("Pink", "Magenta");
@@ -210,10 +214,11 @@ const person2 = Object.assign({}, person, { age: 20 });
 console.log("Exercice 4.4");
 console.log(person2);
 
-/**
- * Exercice 5
- * Fonctions fléchées
- */
+// ============================================
+// EXERCICE 5 : Arrow Functions 🏹
+// ============================================
+// 🎯 Objectif : Convertir les fonctions en arrow functions
+// 📖 Consignes : Consulte le README pour les détails
 
 // Exercice 5.1 : Convertir en fonction fléchée
 const thatsAllFolks = function () {
@@ -246,10 +251,11 @@ function convertToPerson(firstnameLastnameTuple) {
 console.log("Exercice 5.3");
 console.log(convertToPerson(["John", "Doe"]));
 
-/**
- * Exercice 6
- * Syntaxe raccourcie d'assignation d'objets
- */
+// ============================================
+// EXERCICE 6 : Property Shorthand 🔑
+// ============================================
+// 🎯 Objectif : Utiliser la syntaxe raccourcie pour les propriétés
+// 📖 Consignes : Consulte le README pour les détails
 
 // Exercice 6 : raccourci l'assignation à l'objet
 
@@ -263,10 +269,11 @@ function convertToPerson2([firstname, lastname]) {
 console.log("Exercice 6");
 console.log(convertToPerson2(["John", "Doe"]));
 
-/**
- * Exercice 7
- * Modules import / export
- */
+// ============================================
+// EXERCICE 7 : Modules (import/export) 📦
+// ============================================
+// 🎯 Objectif : Créer un module pour encapsuler le code
+// 📖 Consignes : Consulte le README pour les détails
 
 // Exercice 7 : Voici un exemple de code pour gérer un panier d'achat
 // On souhaite pouvoir utiliser ce code à plusieurs endroits dans un projet
@@ -306,7 +313,7 @@ function updateCartQuantity(productName, quantity) {
 function computeTotal() {
   return cart.reduce(
     (total, cartLine) => total + cartLine.quantity * cartLine.price,
-    0
+    0,
   );
 }
 
@@ -334,16 +341,17 @@ addToCart({ product: "Biscuit", price: 3 }, 2);
 console.log("Affichage du total panier :");
 console.log(displayAmount(computeTotal()));
 
-/**
- * Exercice 8
- * Operation asynchrone
- */
+// ============================================
+// EXERCICE 8 : Async/Await ⚡
+// ============================================
+// 🎯 Objectif : Transformer les Promesses en async/await
+// 📖 Consignes : Consulte le README pour les détails
 
 // Exercice 8 : Transforme les opérations asynchrone avec la syntaxe async/await
 
 function loadFruits() {
   return fetch("http://127.0.0.1:5500/data/fruits.json").then((response) =>
-    response.json()
+    response.json(),
   );
 }
 
@@ -351,7 +359,7 @@ function program() {
   loadFruits()
     .then((fruits) => console.log(fruits))
     .catch((error) =>
-      console.log("Problème lors du chargement des fruits", error)
+      console.log("Problème lors du chargement des fruits", error),
     );
 }
 
