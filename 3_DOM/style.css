@@ -414,6 +414,276 @@ h2::after {
 }
 
 /* ============================================
+   EXERCICE 9 - Arbre Généalogique
+   ============================================ */
+
+.genealogy-section {
+  margin: 3rem 0;
+}
+
+.potion-tree {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.potion-category {
+  background: rgba(139, 92, 246, 0.1);
+  border: 2px solid var(--fantasy-purple);
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-width: 250px;
+}
+
+.category-title {
+  color: var(--fantasy-gold);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--fantasy-purple);
+  padding-bottom: 0.5rem;
+}
+
+.potion-list {
+  list-style: none;
+  padding: 0;
+}
+
+.potion-item {
+  background: rgba(30, 41, 59, 0.6);
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border-left: 3px solid var(--fantasy-blue);
+  transition: all 0.3s ease;
+}
+
+.potion-item:hover {
+  transform: translateX(5px);
+  border-left-color: var(--fantasy-gold);
+}
+
+.potion-item.first {
+  border-left-color: var(--fantasy-gold);
+}
+
+.potion-item.last {
+  border-left-color: var(--fantasy-red);
+}
+
+/* ============================================
+   EXERCICE 10 - Étiquettes Magiques
+   ============================================ */
+
+.labels-section {
+  margin: 3rem 0;
+}
+
+#labeled-potions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.labeled-potion {
+  position: relative;
+}
+
+.show-info {
+  margin-top: 1rem;
+}
+
+.potion-info {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid var(--fantasy-blue);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.potion-info.hidden {
+  display: none;
+}
+
+.potion-info p {
+  margin: 0.5rem 0;
+  color: var(--light-text);
+}
+
+/* ============================================
+   EXERCICE 11 - Validation en temps réel
+   ============================================ */
+
+.validation-section {
+  margin: 3rem 0;
+}
+
+.required {
+  color: var(--fantasy-red);
+}
+
+.validation-feedback {
+  min-height: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.validation-feedback.valid {
+  color: var(--fantasy-emerald);
+}
+
+.validation-feedback.valid::before {
+  content: "✓ ";
+}
+
+.validation-feedback.invalid {
+  color: var(--fantasy-red);
+}
+
+.validation-feedback.invalid::before {
+  content: "✗ ";
+}
+
+.form-control.valid {
+  border-color: var(--fantasy-emerald);
+}
+
+.form-control.invalid {
+  border-color: var(--fantasy-red);
+}
+
+/* ============================================
+   EXERCICE 12 - Calculateur de commande
+   ============================================ */
+
+.calculator-section {
+  margin: 3rem 0;
+}
+
+.shopping-cart {
+  background: rgba(30, 41, 59, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid var(--fantasy-purple);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background: rgba(45, 55, 72, 0.6);
+  border-radius: 8px;
+  border-left: 3px solid var(--fantasy-blue);
+}
+
+.item-info h5 {
+  color: var(--fantasy-gold);
+  margin-bottom: 0.5rem;
+}
+
+.item-price {
+  color: var(--light-text);
+  margin: 0;
+}
+
+.unit-price {
+  color: var(--fantasy-gold);
+  font-weight: bold;
+}
+
+.item-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.quantity-input {
+  width: 80px;
+  padding: 0.5rem;
+  background: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid var(--fantasy-purple);
+  color: var(--light-text) !important;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.item-total {
+  margin: 0;
+  color: var(--light-text);
+}
+
+.total-price {
+  color: var(--fantasy-gold);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.cart-total {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--fantasy-purple);
+  text-align: right;
+}
+
+.cart-total h3 {
+  color: var(--fantasy-gold);
+  font-size: 1.8rem;
+}
+
+#grand-total {
+  color: var(--fantasy-emerald);
+  font-weight: bold;
+}
+
+/* ============================================
+   EXERCICE 13 - Recherche de potions
+   ============================================ */
+
+.search-section {
+  margin: 3rem 0;
+}
+
+.search-bar {
+  margin-bottom: 2rem;
+}
+
+#search-input {
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
+.search-count {
+  margin-top: 0.5rem;
+  color: var(--fantasy-purple);
+  font-style: italic;
+}
+
+.searchable-potion {
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.searchable-potion.hidden {
+  display: none;
+}
+
+.no-results {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--fantasy-red);
+  margin-top: 2rem;
+}
+
+.no-results.hidden {
+  display: none;
+}
+
+/* ============================================
    SECTIONS
    ============================================ */
 

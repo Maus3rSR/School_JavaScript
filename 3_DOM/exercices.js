@@ -91,3 +91,65 @@ const potions = [
 // Sélectionne le miroir et les éléments à afficher/cacher
 // Utilise mouseenter et mouseleave pour détecter le survol
 // Utilise classList.remove() et classList.add() pour afficher le reflet
+
+// ============================================
+// EXERCICE 9 : L'Arbre Généalogique des Potions 🌳
+// ============================================
+// 🎯 Objectif : Naviguer dans le DOM avec parentElement, children, etc.
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Sélectionne toutes les catégories de potions
+// Pour chaque catégorie, trouve la liste (children)
+// Ajoute la classe 'first' au premier item et 'last' au dernier item
+
+// ============================================
+// EXERCICE 10 : Les Étiquettes Magiques 🏷️
+// ============================================
+// 🎯 Objectif : Utiliser les attributs data-* et dataset
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Sélectionne tous les boutons "Plus d'infos"
+// Pour chaque bouton, ajoute un événement click
+// Récupère les data attributes de la potion parente
+// Affiche les infos dans la div .potion-info
+
+// ============================================
+// EXERCICE 11 : Validation Magique en Temps Réel ✨
+// ============================================
+// 🎯 Objectif : Valider un formulaire en temps réel avec les événements input
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Sélectionne tous les champs du formulaire
+// Ajoute un événement 'input' sur chaque champ
+// Valide le champ (min 3 caractères pour texte, > 0 pour prix)
+// Ajoute les classes 'valid' ou 'invalid' et affiche un message
+// Active/désactive le bouton submit selon la validité globale
+
+// ============================================
+// EXERCICE 12 : Calculateur de Commande 🧮
+// ============================================
+// 🎯 Objectif : Calculer automatiquement le total d'une commande
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Sélectionne tous les inputs de quantité
+// Pour chaque input, ajoute un événement 'input' ou 'change'
+// Calcule le total de la ligne (quantité × prix)
+// Affiche le total de la ligne
+// Calcule et affiche le total général
+
+// ============================================
+// EXERCICE 13 : Recherche de Potions 🔍
+// ============================================
+// 🎯 Objectif : Filtrer des éléments en temps réel avec une barre de recherche
+// 📖 Consignes : Consulte le README pour les détails
+
+// ✍️ TON CODE ICI
+// Sélectionne le champ de recherche et toutes les cartes de potions
+// Ajoute un événement 'input' sur le champ de recherche
+// Pour chaque potion, vérifie si le nom ou la description contient le texte recherché
+// Affiche/cache les potions avec classList.add/remove('hidden')
+// Affiche le nombre de résultats et le message "Aucune potion trouvée" si besoin

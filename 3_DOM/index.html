@@ -100,6 +100,180 @@
         </div>
       </div>
     </section>
+
+    <section class="genealogy-section">
+      <h2 class="my-4">L'Arbre Généalogique des Potions</h2>
+      <p class="text-muted">Explore la hiérarchie des potions et ajoute des badges selon leur position...</p>
+
+      <div id="potion-tree" class="potion-tree">
+        <div class="potion-category" data-category="soin">
+          <h3 class="category-title">Potions de Soin</h3>
+          <ul class="potion-list">
+            <li class="potion-item">Potion de soin mineure</li>
+            <li class="potion-item">Potion de soin</li>
+            <li class="potion-item">Potion de soin majeure</li>
+          </ul>
+        </div>
+        <div class="potion-category" data-category="magie">
+          <h3 class="category-title">Potions de Magie</h3>
+          <ul class="potion-list">
+            <li class="potion-item">Potion de mana</li>
+            <li class="potion-item">Potion d'intelligence</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="labels-section">
+      <h2 class="my-4">Les Étiquettes Magiques</h2>
+      <p class="text-muted">Découvre les informations cachées sur les potions...</p>
+
+      <div id="labeled-potions" class="row">
+        <div class="card col-md-5 labeled-potion" data-rarete="rare" data-effet-secondaire="Peut causer des vertiges"
+          data-duree="2 heures">
+          <div class="card-body">
+            <h5 class="card-title">Potion d'Invisibilité</h5>
+            <p class="card-text">Rend invisible pendant un court moment.</p>
+            <button class="btn btn-info btn-sm show-info">ℹ️ Plus d'infos</button>
+            <div class="potion-info hidden"></div>
+          </div>
+        </div>
+        <div class="card col-md-5 labeled-potion" data-rarete="commun" data-effet-secondaire="Aucun"
+          data-duree="30 minutes">
+          <div class="card-body">
+            <h5 class="card-title">Potion de Vitesse</h5>
+            <p class="card-text">Augmente la vitesse de déplacement.</p>
+            <button class="btn btn-info btn-sm show-info">ℹ️ Plus d'infos</button>
+            <div class="potion-info hidden"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="validation-section">
+      <h2 class="my-4">Commande de Potion Personnalisée</h2>
+      <p class="text-muted">Remplis le formulaire avec validation en temps réel...</p>
+
+      <form id="custom-potion-form" class="form">
+        <div class="form-group">
+          <label>Nom de la potion <span class="required">*</span></label>
+          <input type="text" id="potion-name" name="name" class="form-control" placeholder="Min. 3 caractères" />
+          <div class="validation-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Ingrédient principal <span class="required">*</span></label>
+          <input type="text" id="potion-ingredient" name="ingredient" class="form-control"
+            placeholder="Min. 3 caractères" />
+          <div class="validation-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Prix (pièces d'or) <span class="required">*</span></label>
+          <input type="number" id="potion-price" name="price" class="form-control" placeholder="Min. 1" min="1" />
+          <div class="validation-feedback"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3" disabled>Commander</button>
+      </form>
+    </section>
+
+    <section class="calculator-section">
+      <h2 class="my-4">Panier de Commande</h2>
+      <p class="text-muted">Sélectionne les quantités et vois le total se calculer automatiquement...</p>
+
+      <div id="shopping-cart" class="shopping-cart">
+        <div class="cart-item">
+          <div class="item-info">
+            <h5>Potion de Soin</h5>
+            <p class="item-price">Prix unitaire: <span class="unit-price">10</span> 🪙</p>
+          </div>
+          <div class="item-controls">
+            <label>Quantité:</label>
+            <input type="number" class="quantity-input" value="0" min="0" max="99" data-price="10" />
+            <p class="item-total">Total: <span class="total-price">0</span> 🪙</p>
+          </div>
+        </div>
+
+        <div class="cart-item">
+          <div class="item-info">
+            <h5>Potion de Mana</h5>
+            <p class="item-price">Prix unitaire: <span class="unit-price">15</span> 🪙</p>
+          </div>
+          <div class="item-controls">
+            <label>Quantité:</label>
+            <input type="number" class="quantity-input" value="0" min="0" max="99" data-price="15" />
+            <p class="item-total">Total: <span class="total-price">0</span> 🪙</p>
+          </div>
+        </div>
+
+        <div class="cart-item">
+          <div class="item-info">
+            <h5>Potion de Force</h5>
+            <p class="item-price">Prix unitaire: <span class="unit-price">20</span> 🪙</p>
+          </div>
+          <div class="item-controls">
+            <label>Quantité:</label>
+            <input type="number" class="quantity-input" value="0" min="0" max="99" data-price="20" />
+            <p class="item-total">Total: <span class="total-price">0</span> 🪙</p>
+          </div>
+        </div>
+
+        <div class="cart-total">
+          <h3>Total de la commande: <span id="grand-total">0</span> 🪙</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <h2 class="my-4">Recherche de Potions</h2>
+      <p class="text-muted">Utilise la barre de recherche pour filtrer les potions...</p>
+
+      <div class="search-bar">
+        <input type="text" id="search-input" class="form-control" placeholder="🔍 Rechercher une potion..." />
+        <p id="search-results-count" class="search-count"></p>
+      </div>
+
+      <div id="searchable-potions" class="row mt-4">
+        <div class="card col-md-3 searchable-potion">
+          <div class="card-body">
+            <h5 class="card-title">Potion de Soin</h5>
+            <p class="card-text">Restaure la santé</p>
+          </div>
+        </div>
+        <div class="card col-md-3 searchable-potion">
+          <div class="card-body">
+            <h5 class="card-title">Potion de Mana</h5>
+            <p class="card-text">Restaure la magie</p>
+          </div>
+        </div>
+        <div class="card col-md-3 searchable-potion">
+          <div class="card-body">
+            <h5 class="card-title">Potion de Force</h5>
+            <p class="card-text">Augmente la force</p>
+          </div>
+        </div>
+        <div class="card col-md-3 searchable-potion">
+          <div class="card-body">
+            <h5 class="card-title">Potion d'Invisibilité</h5>
+            <p class="card-text">Rend invisible</p>
+          </div>
+        </div>
+        <div class="card col-md-3 searchable-potion">
+          <div class="card-body">
+            <h5 class="card-title">Potion de Vitesse</h5>
+            <p class="card-text">Augmente la vitesse</p>
+          </div>
+        </div>
+        <div class="card col-md-3 searchable-potion">
+          <div class="card-body">
+            <h5 class="card-title">Potion d'Intelligence</h5>
+            <p class="card-text">Augmente l'intelligence</p>
+          </div>
+        </div>
+      </div>
+      <p id="no-results" class="no-results hidden">Aucune potion trouvée 😢</p>
+    </section>
   </div>
 
   <template id="template_potion">

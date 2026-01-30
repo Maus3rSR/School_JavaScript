@@ -414,66 +414,197 @@ Page : Au survol du miroir, le texte disparaît et le baron hideux apparaît
 
 ---
 
-## �🎉 Félicitations !
+### Exercice 9 : L'Arbre Généalogique des Potions
 
-Tu as terminé les exercices sur le DOM ! Tu sais maintenant :
+**Fichier** : `exercices.js` (section EXERCICE 9)
 
-- ✅ Sélectionner des éléments (`querySelector`, `querySelectorAll`)
-- ✅ Créer et ajouter des éléments (`createElement`, `appendChild`)
-- ✅ Supprimer des éléments (`remove`)
-- ✅ Gérer les événements (`addEventListener`, `click`, `submit`, `mouseenter`, `mouseleave`)
-- ✅ Modifier les styles (`style.backgroundColor`)
-- ✅ Manipuler les classes CSS (`classList`)
-- ✅ Utiliser les templates HTML
-- ✅ Gérer les formulaires (`FormData`, `submit`)
-- ✅ Réutiliser du code avec des fonctions
+**Objectif** : Apprendre à **naviguer dans le DOM** avec les propriétés de parenté.
 
-Tu es prêt(e) à créer des pages web interactives ! 🚀
+**Contexte** : Les potions sont organisées par catégories. Tu dois ajouter des badges visuels au premier et dernier élément de chaque liste.
+
+**Consignes** :
+
+1. Sélectionne toutes les catégories `.potion-category` avec `querySelectorAll()`
+2. **Pour chaque catégorie** :
+   - Trouve la liste `<ul>` avec `.querySelector('.potion-list')` ou `children`
+   - Récupère tous les items de la liste avec `.querySelectorAll('.potion-item')`
+   - Ajoute la classe `first` au **premier item** : `items[0].classList.add('first')`
+   - Ajoute la classe `last` au **dernier item** : `items[items.length - 1].classList.add('last')`
+
+💡 **Ce que tu vas apprendre** :
+
+- **Navigation dans le DOM** : parcourir la hiérarchie parent/enfant
+- `parentElement` : accéder au parent d'un élément
+- `children` : accéder aux enfants directs d'un élément
+- `firstElementChild` et `lastElementChild` : premier et dernier enfant
+- `nextElementSibling` et `previousElementSibling` : frères et sœurs
+
+💡 **Astuce** : Utilise `querySelectorAll()` pour récupérer toutes les catégories, puis pour chaque catégorie, récupère tous les items. Pour accéder au dernier élément d'un tableau, utilise `items[items.length - 1]`.
+
+💡 **Résultat attendu** :
+
+```
+Page : Le premier item de chaque liste a une bordure dorée, le dernier a une bordure rouge
+```
 
 ---
 
-## 📚 Exercices bonus suggérés (à venir)
+### Exercice 10 : Les Étiquettes Magiques
 
-### Exercice 9 : L'Arbre Généalogique des Potions 🌳
+**Fichier** : `exercices.js` (section EXERCICE 10)
 
-**Concepts** : Navigation dans le DOM (`parentElement`, `children`, `nextElementSibling`)
+**Objectif** : Apprendre à utiliser les **attributs data-\*** pour stocker et lire des données.
 
-- Parcourir la structure HTML
-- Trouver des éléments relatifs à partir d'un point de départ
-- Modifier des éléments en fonction de leur position
+**Contexte** : Chaque potion a des informations cachées (rareté, effets secondaires, durée). Affiche-les quand on clique sur le bouton "Plus d'infos".
 
-### Exercice 10 : Les Étiquettes Magiques 🏷️
+**Consignes** :
 
-**Concepts** : Attributs et data attributes
+1. Sélectionne tous les boutons `.show-info` avec `querySelectorAll()`
+2. **Pour chaque bouton**, ajoute un événement `click` :
+   - Trouve la carte parente avec `button.closest('.labeled-potion')`
+   - Récupère les data attributes avec `dataset` :
+     - `carte.dataset.rarete`
+     - `carte.dataset.effetSecondaire`
+     - `carte.dataset.duree`
+   - Trouve la div `.potion-info` dans la carte
+   - Crée le contenu HTML avec les infos
+   - Affiche/cache la div avec `classList.toggle('hidden')`
 
-- Ajouter des informations cachées sur les potions (rareté, effets secondaires)
-- Utiliser `data-*` attributes pour stocker des données
-- `getAttribute()`, `setAttribute()`, `dataset`
-- Afficher des infos au clic sur une potion
+💡 **Ce que tu vas apprendre** :
 
-### Exercice 11 : Validation Magique en Temps Réel ✨
+- **Data attributes** : stocker des données dans le HTML avec `data-*`
+- `dataset` : accéder facilement aux data attributes (camelCase automatique)
+- `getAttribute()` et `setAttribute()` : méthodes alternatives
+- `closest()` : trouver l'ancêtre le plus proche correspondant au sélecteur
 
-**Concepts** : Validation de formulaire avancée
+💡 **Astuce** : Utilise `closest('.labeled-potion')` pour remonter jusqu'à la carte parente depuis le bouton. Les data attributes se lisent avec `element.dataset.nomAttribut` (attention : `data-effet-secondaire` devient `dataset.effetSecondaire` en camelCase).
 
-- Événements `input`, `blur`, `focus`
-- Validation pendant la saisie
-- Messages d'erreur dynamiques
-- Classes CSS pour les états (valide/invalide)
+💡 **Résultat attendu** :
 
-### Exercice 12 : Calculateur de Commande 🧮
+```
+Page : Cliquer sur "Plus d'infos" affiche/cache les détails de la potion
+```
 
-**Concepts** : Formulaire avec calcul dynamique
+---
 
-- Sélection de quantités pour chaque potion
-- Calcul automatique du total
-- Événement `change` sur les inputs
-- Mise à jour en temps réel
+### Exercice 11 : Validation Magique en Temps Réel
 
-### Exercice 13 : Recherche de Potions 🔍
+**Fichier** : `exercices.js` (section EXERCICE 11)
 
-**Concepts** : Filtrage en temps réel
+**Objectif** : Apprendre à **valider un formulaire en temps réel** avec l'événement `input`.
 
-- Barre de recherche
-- Filtrage des cartes de potions
-- Événement `input` pour recherche instantanée
-- Afficher/cacher des éléments selon le filtre
+**Contexte** : Un formulaire de commande personnalisée doit être validé pendant la saisie, avec des messages d'erreur clairs.
+
+**Consignes** :
+
+1. Sélectionne les 3 champs : `#potion-name`, `#potion-ingredient`, `#potion-price`
+2. Sélectionne le bouton submit
+3. **Pour chaque champ**, ajoute un événement `input` :
+   - Valide le champ :
+     - Texte : minimum 3 caractères
+     - Prix : supérieur à 0
+   - Si valide :
+     - Ajoute la classe `valid` au champ
+     - Retire la classe `invalid`
+     - Affiche un message de succès dans `.validation-feedback`
+   - Si invalide :
+     - Ajoute la classe `invalid` au champ
+     - Retire la classe `valid`
+     - Affiche un message d'erreur
+4. Vérifie si **tous les champs sont valides** :
+   - Si oui : active le bouton (`disabled = false`)
+   - Si non : désactive le bouton (`disabled = true`)
+
+💡 **Ce que tu vas apprendre** :
+
+- Événement `input` : se déclenche à chaque modification
+- Événements `blur` et `focus` : quand le champ perd/gagne le focus
+- Validation en temps réel pour une meilleure UX
+- Gestion de l'état du bouton submit
+
+💡 **Astuce** : L'événement `input` se déclenche à chaque modification. Utilise `classList.toggle('classe', condition)` pour ajouter/retirer une classe selon une condition. Pour activer/désactiver le bouton, modifie sa propriété `disabled` (true/false).
+
+💡 **Résultat attendu** :
+
+```
+Page : Les champs se colorent en vert/rouge pendant la saisie, le bouton s'active quand tout est valide
+```
+
+---
+
+### Exercice 12 : Calculateur de Commande
+
+**Fichier** : `exercices.js` (section EXERCICE 12)
+
+**Objectif** : Apprendre à **calculer dynamiquement** des valeurs avec l'événement `input`.
+
+**Contexte** : Un panier de commande doit calculer automatiquement le total de chaque ligne et le total général.
+
+**Consignes** :
+
+1. Sélectionne tous les inputs `.quantity-input` avec `querySelectorAll()`
+2. **Pour chaque input**, ajoute un événement `input` ou `change` :
+   - Récupère la quantité : `input.value`
+   - Récupère le prix unitaire : `input.dataset.price`
+   - Calcule le total de la ligne : `quantité × prix`
+   - Trouve le span `.total-price` dans le même `.cart-item`
+   - Affiche le total de la ligne
+3. Calcule le **total général** :
+   - Additionne tous les totaux de lignes
+   - Affiche le résultat dans `#grand-total`
+
+💡 **Ce que tu vas apprendre** :
+
+- Événement `change` : se déclenche quand la valeur change et perd le focus
+- Calculs mathématiques en JavaScript
+- Mise à jour dynamique de plusieurs éléments
+- Utilisation de `data-*` pour stocker des valeurs
+
+💡 **Astuce** : Utilise `parseInt()` pour convertir les valeurs en nombres. Le prix unitaire est stocké dans `input.dataset.price`. Pour trouver un élément dans le même parent, utilise `input.closest('.cart-item').querySelector('.total-price')`.
+
+💡 **Résultat attendu** :
+
+```
+Page : Quand tu changes les quantités, les totaux se mettent à jour automatiquement
+```
+
+---
+
+### Exercice 13 : Recherche de Potions
+
+**Fichier** : `exercices.js` (section EXERCICE 13)
+
+**Objectif** : Apprendre à **filtrer des éléments** en temps réel avec une barre de recherche.
+
+**Contexte** : Une barre de recherche permet de filtrer les potions par nom ou description.
+
+**Consignes** :
+
+1. Sélectionne le champ de recherche `#search-input`
+2. Sélectionne toutes les cartes `.searchable-potion`
+3. Sélectionne le compteur `#search-results-count` et le message `#no-results`
+4. Ajoute un événement `input` sur le champ de recherche :
+   - Récupère le texte recherché (en minuscules)
+   - **Pour chaque carte** :
+     - Récupère le titre et la description
+     - Vérifie si le texte recherché est présent
+     - Si oui : retire la classe `hidden`
+     - Si non : ajoute la classe `hidden`
+   - Compte le nombre de cartes visibles
+   - Affiche le compteur : "X potion(s) trouvée(s)"
+   - Affiche/cache le message "Aucune potion trouvée"
+
+💡 **Ce que tu vas apprendre** :
+
+- Filtrage en temps réel avec `input`
+- Méthodes de chaînes : `toLowerCase()`, `includes()`
+- Afficher/cacher dynamiquement des éléments
+- Compter des éléments selon une condition
+
+💡 **Astuce** : Utilise `toLowerCase()` pour rendre la recherche insensible à la casse. La méthode `includes()` vérifie si une chaîne contient un texte. Compte les éléments visibles avec une variable qui s'incrémente dans la boucle.
+
+💡 **Résultat attendu** :
+
+```
+Page : En tapant dans la recherche, seules les potions correspondantes s'affichent
+```
